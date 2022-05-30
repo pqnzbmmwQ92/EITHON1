@@ -1,4 +1,4 @@
-# Copyright (C) 2022 JepThon TEAM
+# Copyright (C) 2022 Ξ𝗜𝗧𝗛𝗢𝗡™ TEAM
 
 import asyncio
 import math
@@ -117,7 +117,7 @@ async def variable(var):  # sourcery no-metrics
     pattern="استخدامي$",
     command=("استخدامي", plugin_category),
     info={
-        "header": "To Check dyno usage of jepthon and also to know how much left.",
+        "header": "To Check dyno usage of EITHON1 and also to know how much left.",
         "usage": "{tr}usage",
     },
 )
@@ -203,7 +203,7 @@ async def _(dyno):
         app = Heroku.app(HEROKU_APP_NAME)
     except BaseException:
         return await dyno.reply(
-            " ⌯︙ عذرا لا يمكنك استخدام اوامر الفارات وهيروكو الا بعد اضافة كود هيروكو الى الفارات شرح الاضافة [اضغط هنا](https://t.me/Jepthon2)"
+            " ⌯︙ عذرا لا يمكنك استخدام اوامر الفارات وهيروكو الا بعد اضافة كود هيروكو الى الفارات شرح الاضافة [اضغط هنا](https://t.me/EITHON1)"
         )
     data = app.get_log()
     await edit_or_reply(

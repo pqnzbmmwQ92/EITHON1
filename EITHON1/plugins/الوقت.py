@@ -14,7 +14,7 @@ from . import reply_id
 
 plugin_category = "utils"
 
-# jepthon timezone
+# EITHON1 timezone
 
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"

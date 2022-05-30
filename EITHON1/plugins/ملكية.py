@@ -19,7 +19,7 @@ plugin_category = "utils"
         "usage": "{tr}otransfer <username to whom you want to transfer>",
     },
 )
-# For JepThon
+# For EITHON1
 
 async def _(event):
     "To transfer channel ownership"

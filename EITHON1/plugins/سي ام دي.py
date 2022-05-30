@@ -61,7 +61,7 @@ async def install(event):
 async def unload(event):
     "To uninstall a plugin."
     shortname = event.pattern_match.group(1)
-    path = Path(f"jepthon/plugins/{shortname}.py")
+    path = Path(f"EITHON1/plugins/{shortname}.py")
     if not os.path.exists(path):
         return await edit_delete(
             event, f"⌯︙لا يوجد هكذا ملف مع المسار {path} لحذفه"

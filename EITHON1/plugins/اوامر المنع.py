@@ -10,7 +10,7 @@ from ..utils import is_admin
 
 plugin_category = "admin"
 
-#copyright for JepThon © 2021
+#copyright for EITHON1 © 2021
 @jmthon.ar_cmd(incoming=True, groups_only=True)
 async def on_new_message(event):
     name = event.raw_text
