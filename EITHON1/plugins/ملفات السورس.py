@@ -10,7 +10,7 @@ plugin_category = "tools"
     pattern="الملفات$",
     command=("الملفات", plugin_category),
     info={
-        "header": "To list all plugins in jepthon.",
+        "header": "To list all plugins in EITHON1.",
         "usage": "{tr}plugins",
     },
 )
@@ -26,13 +26,13 @@ async def _(event):
     pattern="فاراتي$",
     command=("فاراتي", plugin_category),
     info={
-        "header": "To list all environment values in jepthon.",
-        "description": "to show all heroku vars/Config values in your jepthon",
+        "header": "To list all environment values in EITHON1.",
+        "description": "to show all heroku vars/Config values in your EITHON1",
         "usage": "{tr}env",
     },
 )
 async def _(event):
-    "To show all config values in jepthon"
+    "To show all config values in EITHON1"
     cmd = "env"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = (
