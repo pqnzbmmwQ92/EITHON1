@@ -12,7 +12,7 @@ from EITHON1 import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
 from ..Config import Config
 from ..core.logger import logging
-from ..core.session import jmthon
+from ..core.session import EITHON1
 from ..helpers.utils import install_pip
 from ..sql_helper.global_collection import (
     del_keyword_collectionlist,
@@ -25,7 +25,7 @@ from .tools import create_supergroup
 LOGS = logging.getLogger("EITHON1")
 cmdhr = Config.COMMAND_HAND_LER
 
-bot = jmthon
+bot = EITHON1
 
 async def setup_bot():
     """
@@ -36,21 +36,21 @@ async def setup_bot():
         config = await jmthon(functions.help.GetConfigRequest())
         for option in config.dc_options:
             if option.ip_address == jmthon.session.server_address:
-                if jmthon.session.dc_id != option.id:
+                if EITHON1.session.dc_id != option.id:
                     LOGS.warning(
-                        f"⌯︙معرف ثابت في الجلسة من {jmthon.session.dc_id}"
+                        f"⌯︙معرف ثابت في الجلسة من {EITHON1.session.dc_id}"
                         f"⌯︙لـ  {option.id}"
                     )
-                jmthon.session.set_dc(option.id, option.ip_address, option.port)
-                jmthon.session.save()
+                EITHON1.session.set_dc(option.id, option.ip_address, option.port)
+                EITHON1.session.save()
                 break
-        bot_details = await jmthon.tgbot.get_me()
+        bot_details = await EITHON1.tgbot.get_me()
         Config.TG_BOT_USERNAME = f"@{bot_details.username}"
         # await jmthon.start(bot_token=Config.TG_BOT_USERNAME)
-        jmthon.me = await jmthon.get_me()
-        jmthon.uid = jmthon.tgbot.uid = utils.get_peer_id(jmthon.me)
+        EITHON1.me = await EITHON1.get_me()
+        EITHON1.uid = EITHON1.tgbot.uid = utils.get_peer_id(jmthon.me)
         if Config.OWNER_ID == 0:
-            Config.OWNER_ID = utils.get_peer_id(jmthon.me)
+            Config.OWNER_ID = utils.get_peer_id(EITHON1.me)
     except Exception as e:
         LOGS.error(f"كـود تيرمكس - {str(e)}")
         sys.exit()
@@ -62,7 +62,7 @@ async def startupmessage():
     """
     try:
         if BOTLOG:
-            Config.CATUBLOGO = await jmthon.tgbot.send_file(
+            Config.CATUBLOGO = await EITHON1.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/4ed13bf6216c070e3cc48.jpg",
                 caption="⌯︙**بــوت ايــثــون يـعـمـل بـنـجـاح**  ✅ \n⌯︙**قـنـاة الـسـورس**  :  @EITHON1",
@@ -80,15 +80,15 @@ async def startupmessage():
         return None
     try:
         if msg_details:
-            await jmthon.check_testcases()
-            message = await jmthon.get_messages(msg_details[0], ids=msg_details[1])
+            await EITHON1.check_testcases()
+            message = await EITHON1.get_messages(msg_details[0], ids=msg_details[1])
             text = (
                 message.text
                 + "\n\n**⌯︙اهلا وسهلا لقد قمت باعاده تشغيل بـوت ايــثــون تمت بنجاح**"
             )
-            await jmthon.edit_message(msg_details[0], msg_details[1], text)
+            await EITHON1.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
-                await jmthon.send_message(
+                await EITHON1.send_message(
                     msg_details[0],
                     f"{cmdhr}بنك",
                     reply_to=msg_details[1],
@@ -106,7 +106,7 @@ async def mybot():
     rz_ment = f"[{EITHON1_USER}](tg://user?id={The_razan})"
     f"ـ {rz_ment}"
     f"⪼ هذا هو بوت خاص بـ {rz_ment} يمكنك التواصل معه هنا"
-    starkbot = await jmthon.tgbot.get_me()
+    starkbot = await EITHON1.tgbot.get_me()
     perf = "[ ايــثــون ]"
     bot_name = starkbot.first_name
     botname = f"@{starkbot.username}"
@@ -136,7 +136,7 @@ async def ipchange():
         delgvar("ipaddress")
         LOGS.info("Ip Change detected")
         try:
-            await jmthon.disconnect()
+            await EITHON1.disconnect()
         except (ConnectionError, CancelledError):
             pass
         return "ip change"
@@ -146,9 +146,9 @@ async def add_bot_to_logger_group(chat_id):
     """
     To add bot to logger groups
     """
-    bot_details = await jmthon.tgbot.get_me()
+    bot_details = await EITHON1.tgbot.get_me()
     try:
-        await jmthon(
+        await EITHON1(
             functions.messages.AddChatUserRequest(
                 chat_id=chat_id,
                 user_id=bot_details.username,
@@ -157,7 +157,7 @@ async def add_bot_to_logger_group(chat_id):
         )
     except BaseException:
         try:
-            await jmthon(
+            await EITHON1(
                 functions.channels.InviteToChannelRequest(
                     channel=chat_id,
                     users=[bot_details.username],
@@ -211,15 +211,15 @@ async def saves():
     except Exception as e:
         print(str(e))
     try:
-        await jmthon(JoinChannelRequest("@EITHON1"))
+        await EITHON1(JoinChannelRequest("@EITHON1"))
     except BaseException:
         pass
     try:
-        await jmthon(JoinChannelRequest("@EITHON1"))
+        await EITHON1(JoinChannelRequest("@EITHON1"))
     except BaseException:
         pass
     try:
-        await jmthon(JoinChannelRequest("@EITHON1"))
+        await EITHON1(JoinChannelRequest("@EITHON1"))
     except BaseException:
         pass
 
@@ -231,7 +231,7 @@ async def verifyLoggerGroup():
     flag = False
     if BOTLOG:
         try:
-            entity = await jmthon.get_entity(BOTLOG_CHATID)
+            entity = await EITHON1.get_entity(BOTLOG_CHATID)
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
@@ -254,9 +254,9 @@ async def verifyLoggerGroup():
             )
     else:
         descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @EITHON1"
-        photobt = await jmthon.upload_file(file="EIT/razan/resources/start/EITHON1.2.jpg")
+        photobt = await EITHON1.upload_file(file="EIT/razan/resources/start/EITHON1.2.jpg")
         _, groupid = await create_supergroup(
-            "مجموعة اشعارات ايــثــون ", jmthon, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة اشعارات ايــثــون ", EITHON1, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print("⌯︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
@@ -264,7 +264,7 @@ async def verifyLoggerGroup():
     if PM_LOGGER_GROUP_ID != -100:
         try:
             entity = await jmthon.get_entity(PM_LOGGER_GROUP_ID)
-            if not isinstance(entity, types.User) and not entity.creator:
+            if not isinstanceity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
                         "⌯︙الأذونات مفقودة لإرسال رسائل لـ PM_LOGGER_GROUP_ID المحدد."
