@@ -32,10 +32,10 @@ async def setup_bot():
     To set up bot for EITHON1
     """
     try:
-        await jmthon.connect()
-        config = await jmthon(functions.help.GetConfigRequest())
+        await EITHON1.connect()
+        config = await EITHON1(functions.help.GetConfigRequest())
         for option in config.dc_options:
-            if option.ip_address == jmthon.session.server_address:
+            if option.ip_address == EITHON1.session.server_address:
                 if EITHON1.session.dc_id != option.id:
                     LOGS.warning(
                         f"⌯︙معرف ثابت في الجلسة من {EITHON1.session.dc_id}"
@@ -46,9 +46,9 @@ async def setup_bot():
                 break
         bot_details = await EITHON1.tgbot.get_me()
         Config.TG_BOT_USERNAME = f"@{bot_details.username}"
-        # await jmthon.start(bot_token=Config.TG_BOT_USERNAME)
+        # await EITHON1.start(bot_token=Config.TG_BOT_USERNAME)
         EITHON1.me = await EITHON1.get_me()
-        EITHON1.uid = EITHON1.tgbot.uid = utils.get_peer_id(jmthon.me)
+        EITHON1.uid = EITHON1.tgbot.uid = utils.get_peer_id(EITHON1.me)
         if Config.OWNER_ID == 0:
             Config.OWNER_ID = utils.get_peer_id(EITHON1.me)
     except Exception as e:
@@ -263,8 +263,8 @@ async def verifyLoggerGroup():
         flag = True
     if PM_LOGGER_GROUP_ID != -100:
         try:
-            entity = await jmthon.get_entity(PM_LOGGER_GROUP_ID)
-            if not isinstanceity, types.User) and not entity.creator:
+            entity = await EITHON1.get_entity(PM_LOGGER_GROUP_ID)
+            if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
                         "⌯︙الأذونات مفقودة لإرسال رسائل لـ PM_LOGGER_GROUP_ID المحدد."
@@ -283,9 +283,9 @@ async def verifyLoggerGroup():
             )
     else:
         descript = "⌯︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @EITHON1"
-        photobt = await jmthon.upload_file(file="EIT/razan/resources/start/EITHON1.jpg")
+        photobt = await EITHON1.upload_file(file="EIT/razan/resources/start/EITHON1.jpg")
         _, groupid = await create_supergroup(
-            "مجموعة التخزين", jmthon, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة التخزين", EITHON1, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PM_LOGGER_GROUP_ID", groupid)
         print("تـم عمـل الكروب التخزين بنـجاح واضافة الـفارات الـيه.")
