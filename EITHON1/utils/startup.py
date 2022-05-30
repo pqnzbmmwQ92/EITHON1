@@ -101,9 +101,9 @@ async def startupmessage():
 
 
 async def mybot():
-    JEPTH_USER = bot.me.first_name
+    EITHON1_USER = bot.me.first_name
     The_razan = bot.uid
-    rz_ment = f"[{JEPTH_USER}](tg://user?id={The_razan})"
+    rz_ment = f"[{EITHON1_USER}](tg://user?id={The_razan})"
     f"ـ {rz_ment}"
     f"⪼ هذا هو بوت خاص بـ {rz_ment} يمكنك التواصل معه هنا"
     starkbot = await jmthon.tgbot.get_me()
@@ -219,7 +219,7 @@ async def saves():
     except BaseException:
         pass
     try:
-        await jmthon(JoinChannelRequest("@Themejep"))
+        await jmthon(JoinChannelRequest("@EITHON1"))
     except BaseException:
         pass
 
