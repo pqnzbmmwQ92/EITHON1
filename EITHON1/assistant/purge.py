@@ -1,4 +1,4 @@
-#(c) Copyright JepThon 2020-21
+#(c) Copyright ˛⁽㋡₎⇣EITHON1 2020-21
 #جميع الحقوق محفودظة لسورس جـيبثون 
 #By ~  @RR9R7
 import asyncio

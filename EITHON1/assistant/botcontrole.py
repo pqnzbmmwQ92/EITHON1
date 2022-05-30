@@ -3,7 +3,7 @@ from datetime import datetime
 
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 from ..core.logger import logging
@@ -31,7 +31,7 @@ cmhd = Config.COMMAND_HAND_LER
 
 
 
-@jmthon.bot_cmd(
+@EITHON1.bot_cmd(
     pattern="^/broadcast$",
     from_users=Config.OWNER_ID,
 )
@@ -92,7 +92,7 @@ async def bot_broadcast(event):
     await br_cast.edit(b_info, parse_mode="html")
 
 
-@jmthon.bot_cmd(
+@EITHON1.bot_cmd(
     pattern="users$",
     command=("users", plugin_category),
     info={
@@ -112,7 +112,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@jmthon.bot_cmd(
+@EITHON1.bot_cmd(
     pattern="^/block\s+([\s\S]*)",
     from_users=Config.OWNER_ID,
 )
@@ -147,7 +147,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="^/unblock(?:\s|$)([\s\S]*)",
     from_users=Config.OWNER_ID,
 )
@@ -174,7 +174,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@jmthon.bot_cmd(
+@EITHON1.bot_cmd(
     pattern="المحظورين$",
     command=("المحظورين", plugin_category),
     info={
@@ -194,7 +194,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@jmthon.bot_cmd(
+@EITHON1.bot_cmd(
     pattern="وضع_التكرار (تشغيل|تعطيل)$",
     command=("وضع_تكرار", plugin_category),
     info={

@@ -366,7 +366,7 @@ async def settings(event):#    قـسم  السنـوات  :)
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id, 
-                                 Jmthonyear, 
+                                 EITHON1year, 
                                  buttons=[[Button.inline("║ رجوع ║", data="rozmonth")]
                                  ])
     else:
