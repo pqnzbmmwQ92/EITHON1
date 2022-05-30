@@ -4,13 +4,13 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 from . import deEmojify, reply_id
 
 
-@jmthon.ar_cmd(pattern="تكلم(?:\s|$)([\s\S]*)")
+@EITHON1.ar_cmd(pattern="تكلم(?:\s|$)([\s\S]*)")
 async def _(event):
     input_str = event.pattern_match.group(1)
     start = datetime.now()
@@ -26,7 +26,7 @@ async def _(event):
             return await edit_or_reply(event, "- هذا نص غير صحيح")
         text = input_str
         lan = "ar"
-    jepthonevent = await edit_or_reply(event, "⌔∮ جـار التسجيل انتـظر قليلا")
+    EITHON1event = await edit_or_reply(event, "⌔∮ جـار التسجيل انتـظر قليلا")
     text = deEmojify(text.strip())
     lan = lan.strip()
     if not os.path.isdir("./temp/"):
@@ -54,7 +54,7 @@ async def _(event):
                 command_to_execute, stderr=subprocess.STDOUT
             )
         except (subprocess.CalledProcessError, NameError, FileNotFoundError) as exc:
-            await jepthonevent.edit(str(exc))
+            await EITHON1event.edit(str(exc))
         else:
             os.remove(required_file_name)
             required_file_name = required_file_name + ".opus"
@@ -69,8 +69,8 @@ async def _(event):
         )
         os.remove(required_file_name)
         await edit_delete(
-            jepthonevent,
+            EITHON1event,
             "تحويل النص {} الى مقطع صوتي في {} ثواني ".format(text[0:20], ms),
         )
     except Exception as e:
-        await edit_or_reply(jepthonevent, f"**خطأ:**\n`{e}`")
+        await edit_or_reply(EITHON1event, f"**خطأ:**\n`{e}`")
