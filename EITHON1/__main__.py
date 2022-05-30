@@ -17,8 +17,8 @@ from .utils import (
 
 LOGS = logging.getLogger("EITHON1")
 
-print(jepthon.__copyright__)
-print("Licensed under the terms of the " + jepthon.__license__)
+print(EITHON1.__copyright__)
+print("Licensed under the terms of the " + EITHON1.__license__)
 
 cmdhr = Config.COMMAND_HAND_LER
 
@@ -51,7 +51,7 @@ async def startup_process():
     print("⌯︙بـوت ايــثــون يعـمل بـنجاح ")
     print(
         f"يجـب تفـعيل وضع الأنلايـن ثم أرسـل {cmdhr}فحص لـرؤيـة اذا كـان البوت شـغال\
-        \nللمسـاعدة تواصـل  https://t.me/JepthonSupport"
+        \nللمسـاعدة تواصـل  https://t.me/EITHONSupport"
     )
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
     await verifyLoggerGroup()
