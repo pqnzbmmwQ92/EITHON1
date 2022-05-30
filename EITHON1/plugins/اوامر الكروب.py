@@ -19,8 +19,8 @@ from telethon.tl.types import (
     UserStatusOnline,
     UserStatusRecently,
 )
-from EITHON1 import jmthon
-from .. import jmthon
+from EITHON1 import EITHON1
+from .. import EITHON1
 from ..core.logger import logging
 from ..helpers.utils import reply_id
 from ..sql_helper.locks_sql import *
@@ -46,12 +46,12 @@ BANNED_RIGHTS = ChatBannedRights(
 
 async def ban_user(chat_id, i, rights):
     try:
-        await jmthon(functions.channels.EditBannedRequest(chat_id, i, rights))
+        await EITHON1(functions.channels.EditBannedRequest(chat_id, i, rights))
         return True, None
     except Exception as exc:
         return False, str(exc)
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="تخوني$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="تخوني$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -60,7 +60,7 @@ async def event(vois):
         await vois.client.send_file(vois.chat_id, jpvois1, reply_to=Ti)
         await vois.delete()
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="مستمرة الكلاوات$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="مستمرة الكلاوات$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -68,7 +68,7 @@ async def event(vois):
     if jpvois2:
         await vois.client.send_file(vois.chat_id, jpvois2, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="احب العراق$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="احب العراق$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -76,7 +76,7 @@ async def event(vois):
     if jpvois3:
         await vois.client.send_file(vois.chat_id, jpvois3, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="احبك$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="احبك$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -84,7 +84,7 @@ async def event(vois):
     if jpvois4:
         await vois.client.send_file(vois.chat_id, jpvois4, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اخت التنيج$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اخت التنيج$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -92,7 +92,7 @@ async def event(vois):
     if jpvois5:
         await vois.client.send_file(vois.chat_id, jpvois5, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اذا اكمشك$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اذا اكمشك$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -100,7 +100,7 @@ async def event(vois):
     if jpvois6:
         await vois.client.send_file(vois.chat_id, jpvois6, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اسكت$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اسكت$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -108,7 +108,7 @@ async def event(vois):
     if jpvois7:
         await vois.client.send_file(vois.chat_id, jpvois7, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="افتهمنا$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="افتهمنا$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -116,7 +116,7 @@ async def event(vois):
     if jpvois8:
         await vois.client.send_file(vois.chat_id, jpvois8, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اكل خرا$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اكل خرا$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -124,7 +124,7 @@ async def event(vois):
     if jpvois9:
         await vois.client.send_file(vois.chat_id, jpvois9, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="العراق$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="العراق$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -132,7 +132,7 @@ async def event(vois):
     if jpvois10:
         await vois.client.send_file(vois.chat_id, jpvois10, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="الكعده وياكم$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="الكعده وياكم$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -140,7 +140,7 @@ async def event(vois):
     if jpvois11:
         await vois.client.send_file(vois.chat_id, jpvois11, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="الكمر اني$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="الكمر اني$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -148,7 +148,7 @@ async def event(vois):
     if jpvois12:
         await vois.client.send_file(vois.chat_id, jpvois12, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اللهم لا شماته$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اللهم لا شماته$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -156,7 +156,7 @@ async def event(vois):
     if jpvois13:
         await vois.client.send_file(vois.chat_id, jpvois13, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اني مااكدر$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اني مااكدر$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -164,7 +164,7 @@ async def event(vois):
     if jpvois14:
         await vois.client.send_file(vois.chat_id, jpvois14, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="بقولك ايه$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="بقولك ايه$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -172,7 +172,7 @@ async def event(vois):
     if jpvois15:
         await vois.client.send_file(vois.chat_id, jpvois15, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="تف على شرفك$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="تف على شرفك$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -180,7 +180,7 @@ async def event(vois):
     if jpvois16:
         await vois.client.send_file(vois.chat_id, jpvois16, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="شجلبت$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="شجلبت$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -188,7 +188,7 @@ async def event(vois):
     if jpvois17:
         await vois.client.send_file(vois.chat_id, jpvois17, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="شكد شفت ناس$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="شكد شفت ناس$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -196,7 +196,7 @@ async def event(vois):
     if jpvois18:
         await vois.client.send_file(vois.chat_id, jpvois18, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="صباح القنادر$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="صباح القنادر$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -204,7 +204,7 @@ async def event(vois):
     if jpvois19:
         await vois.client.send_file(vois.chat_id, jpvois19, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="ضحكة فيطية$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="ضحكة فيطية$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -212,7 +212,7 @@ async def event(vois):
     if jpvois20:
         await vois.client.send_file(vois.chat_id, jpvois20, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="طار القلب$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="طار القلب$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -220,7 +220,7 @@ async def event(vois):
     if jpvois21:
         await vois.client.send_file(vois.chat_id, jpvois21, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="غطيلي$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="غطيلي$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -228,7 +228,7 @@ async def event(vois):
     if jpvois22:
         await vois.client.send_file(vois.chat_id, jpvois22, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="في منتصف الجبهة$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="في منتصف الجبهة$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -236,7 +236,7 @@ async def event(vois):
     if jpvois23:
         await vois.client.send_file(vois.chat_id, jpvois23, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="لاتقتل المتعه$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="لاتقتل المتعه$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -244,7 +244,7 @@ async def event(vois):
     if jpvois24:
         await vois.client.send_file(vois.chat_id, jpvois24, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="لا لتغلط$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="لا لتغلط$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -252,7 +252,7 @@ async def event(vois):
     if jpvois25:
         await vois.client.send_file(vois.chat_id, jpvois25, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="لا يمه لا$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="لا يمه لا$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -260,7 +260,7 @@ async def event(vois):
     if jpvois26:
         await vois.client.send_file(vois.chat_id, jpvois26, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="لحد يحجي وياي$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="لحد يحجي وياي$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -268,7 +268,7 @@ async def event(vois):
     if jpvois27:
         await vois.client.send_file(vois.chat_id, jpvois27, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="ماادري يعني$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="ماادري يعني$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -276,7 +276,7 @@ async def event(vois):
     if jpvois28:
         await vois.client.send_file(vois.chat_id, jpvois28, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="منو انت$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="منو انت$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -284,7 +284,7 @@ async def event(vois):
     if jpvois29:
         await vois.client.send_file(vois.chat_id, jpvois29, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="مو صوجكم$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="مو صوجكم$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -292,7 +292,7 @@ async def event(vois):
     if jpvois30:
         await vois.client.send_file(vois.chat_id, jpvois30, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="خوش تسولف$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="خوش تسولف$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -300,7 +300,7 @@ async def event(vois):
     if jpvois31:
         await vois.client.send_file(vois.chat_id, jpvois31, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="يع$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="يع$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -308,7 +308,7 @@ async def event(vois):
     if jpvois32:
         await vois.client.send_file(vois.chat_id, jpvois32, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="زيج$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="زيج$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -316,7 +316,7 @@ async def event(vois):
     if jpvois33:
         await vois.client.send_file(vois.chat_id, jpvois33, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="زيج2$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="زيج2$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -324,7 +324,7 @@ async def event(vois):
     if jpvois34:
         await vois.client.send_file(vois.chat_id, jpvois34, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="يعني مااعرف$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="يعني مااعرف$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -332,7 +332,7 @@ async def event(vois):
     if jpvois35:
         await vois.client.send_file(vois.chat_id, jpvois35, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="يامرحبا$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="يامرحبا$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -340,7 +340,7 @@ async def event(vois):
     if jpvois36:
         await vois.client.send_file(vois.chat_id, jpvois36, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="منو انتة$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="منو انتة$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -348,7 +348,7 @@ async def event(vois):
     if jpvois37:
         await vois.client.send_file(vois.chat_id, jpvois37, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="ماتستحي$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="ماتستحي$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -356,7 +356,7 @@ async def event(vois):
     if jpvois38:
         await vois.client.send_file(vois.chat_id, jpvois38, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="كعدت الديوث$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="كعدت الديوث$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -364,7 +364,7 @@ async def event(vois):
     if jpvois39:
         await vois.client.send_file(vois.chat_id, jpvois39, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="عيب$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="عيب$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -372,7 +372,7 @@ async def event(vois):
     if jpvois40:
         await vois.client.send_file(vois.chat_id, jpvois40, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="عنعانم$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="عنعانم$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -380,7 +380,7 @@ async def event(vois):
     if jpvois41:
         await vois.client.send_file(vois.chat_id, jpvois41, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="طبك مرض$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="طبك مرض$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -388,7 +388,7 @@ async def event(vois):
     if jpvois42:
         await vois.client.send_file(vois.chat_id, jpvois42, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="سييي$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="سييي$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -396,7 +396,7 @@ async def event(vois):
     if jpvois43:
         await vois.client.send_file(vois.chat_id, jpvois43, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="سبيدر مان$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="سبيدر مان$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -404,7 +404,7 @@ async def event(vois):
     if jpvois44:
         await vois.client.send_file(vois.chat_id, jpvois44, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="خاف حرام$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="خاف حرام$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -412,7 +412,7 @@ async def event(vois):
     if jpvois45:
         await vois.client.send_file(vois.chat_id, jpvois45, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="تحيه لاختك$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="تحيه لاختك$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -420,7 +420,7 @@ async def event(vois):
     if jpvois46:
         await vois.client.send_file(vois.chat_id, jpvois46, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="امشي كحبة$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="امشي كحبة$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -428,7 +428,7 @@ async def event(vois):
     if jpvois47:
         await vois.client.send_file(vois.chat_id, jpvois47, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="امداك$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="امداك$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -436,7 +436,7 @@ async def event(vois):
     if jpvois48:
         await vois.client.send_file(vois.chat_id, jpvois48, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="الحس$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="الحس$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -444,7 +444,7 @@ async def event(vois):
     if jpvois49:
         await vois.client.send_file(vois.chat_id, jpvois49, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="افتهمنا$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="افتهمنا$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -452,7 +452,7 @@ async def event(vois):
     if jpvois50:
         await vois.client.send_file(vois.chat_id, jpvois32, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اطلع برا$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اطلع برا$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -460,7 +460,7 @@ async def event(vois):
     if jpvois51:
         await vois.client.send_file(vois.chat_id, jpvois51, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اخت التنيج$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اخت التنيج$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -468,7 +468,7 @@ async def event(vois):
     if jpvois52:
         await vois.client.send_file(vois.chat_id, jpvois52, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اوني تشان$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اوني تشان$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -476,7 +476,7 @@ async def event(vois):
     if jpvois53:
         await vois.client.send_file(vois.chat_id, jpvois53, reply_to=Ti)
         await vois.delete()
-@jmthon.on(admin_cmd(outgoing=True, pattern="اوني تشان2$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اوني تشان2$"))
 async def event(vois):
     if vois.fwd_from:
         return
@@ -484,7 +484,7 @@ async def event(vois):
     if jpvois54:
         await vois.client.send_file(vois.chat_id, jpvois54, reply_to=Ti)
         await vois.delete()        
-@jmthon.on(events.NewMessage(outgoing=True, pattern="ارسل?(.*)"))
+@EITHON1.on(events.NewMessage(outgoing=True, pattern="ارسل?(.*)"))
 async def remoteaccess(event):
 
     p = event.pattern_match.group(1)
@@ -511,7 +511,7 @@ async def remoteaccess(event):
         await event.edit("تم ارسال الرساله الى الرابط الذي وضعتة")
     except BaseException:
         await event.edit("** عذرا هذا ليست مجموعة **")
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اطردني$",
     command=("اطردني", plugin_category),
     info={
@@ -527,7 +527,7 @@ async def kickme(leave):
     await leave.edit("⌯︙ حسنا سأغادر المجموعه وداعا ")
     await leave.client.kick_participant(leave.chat_id, "me")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تفليش بالطرد$",
     command=("تفليش بالطرد", plugin_category),
     info={
@@ -570,7 +570,7 @@ async def _(event):
         f"⌯︙ تم بنجاح طرد من {total} الاعضاء ✅ "
     )
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تفليش$",
     command=("تفليش", plugin_category),
     info={
@@ -616,7 +616,7 @@ async def _(event):
 
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="حذف المحظورين$",
     command=("حذف المحظورين", plugin_category),
     info={
@@ -670,7 +670,7 @@ async def _(event):
     await catevent.edit(f"⌯︙الغاء حظر :__{succ}/{total} في الدردشه {chat.title}__")
 
 # Ported by ©[NIKITA](t.me/kirito6969) and ©[EYEPATCH](t.me/NeoMatrix90)
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="المحذوفين ?([\s\S]*)",
     command=("المحذوفين", plugin_category),
     info={
@@ -735,7 +735,7 @@ async def rm_deletedacc(show):
         )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="احصائيات الاعضاء ?([\s\S]*)",
     command=("احصائيات الاعضاء", plugin_category),
     info={

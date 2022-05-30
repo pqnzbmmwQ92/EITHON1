@@ -2,7 +2,7 @@ import sys
 from asyncio.exceptions import CancelledError
 from time import sleep
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.logger import logging
 from ..core.managers import edit_or_reply
@@ -18,7 +18,7 @@ LOGS = logging.getLogger(__name__)
 plugin_category = "tools"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تحديث$",
     command=("تحديث", plugin_category),
     info={
@@ -48,14 +48,14 @@ async def _(event):
         LOGS.error(e)
     try:
         delgvar("ipaddress")
-        await jmthon.disconnect()
+        await EITHON1.disconnect()
     except CancelledError:
         pass
     except Exception as e:
         LOGS.error(e)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اطفاء$",
     command=("اطفاء", plugin_category),
     info={
@@ -74,7 +74,7 @@ async def _(event):
     else:
         sys.exit(0)
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="التحديثات (تشغيل|ايقاف)$",
     command=("التحديثات", plugin_category),
     info={

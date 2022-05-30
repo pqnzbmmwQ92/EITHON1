@@ -5,7 +5,7 @@ import heroku3
 import requests
 import urllib3
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -18,7 +18,7 @@ HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 
-@jmthon.ar_cmd(pattern="وضع (.*)")
+@EITHON1.ar_cmd(pattern="وضع (.*)")
 async def variable(var):
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
@@ -158,7 +158,7 @@ async def variable(var):
         heroku_var[variable] = vra
 
 
-@jmthon.ar_cmd(pattern="ازالة (.*)")
+@EITHON1.ar_cmd(pattern="ازالة (.*)")
 async def variable(event):
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
@@ -255,7 +255,7 @@ async def variable(event):
         del heroku_var[variable]
 
 
-@jmthon.ar_cmd(pattern="وقت(?:\s|$)([\s\S]*)")
+@EITHON1.ar_cmd(pattern="وقت(?:\s|$)([\s\S]*)")
 async def variable(event):
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
@@ -363,7 +363,7 @@ async def variable(event):
         heroku_var[variable] = Syria
 
 
-@jmthon.ar_cmd(pattern="استخدامي$")
+@EITHON1.ar_cmd(pattern="استخدامي$")
 async def dyno_usage(dyno):
     if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):
         return await edit_delete(
@@ -421,7 +421,7 @@ async def dyno_usage(dyno):
     )
 
 
-@jmthon.ar_cmd(pattern="لوك$")
+@EITHON1.ar_cmd(pattern="لوك$")
 async def _(dyno):
     if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):
         return await edit_delete(

@@ -1,5 +1,5 @@
 from EITHON1 import *
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EITHON1.utils import admin_cmd
 from telethon.tl.types import Channel, Chat, User
 from telethon.tl import functions, types
@@ -68,7 +68,7 @@ def user_full_name(user):
 #
 
 
-@jmthon.on(admin_cmd(pattern=r"ضيف ?(.*)"))
+@EITHON1.on(admin_cmd(pattern=r"ضيف ?(.*)"))
 async def get_users(event):   
     sender = await event.get_sender() ; me = await event.client.get_me()
     if not sender.id == me.id:

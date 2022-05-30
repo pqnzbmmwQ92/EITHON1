@@ -5,14 +5,14 @@ import random, re
 from EITHON1.utils import admin_cmd
 
 import asyncio
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EIT.razan._islam import *
 from ..core.managers import edit_or_reply
 
 plugin_category = "extra" 
 
 #by ~ @RR9R7
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اذكار الصباح",
     command=("اذكار الصباح", plugin_category),)
 async def _(event):
@@ -20,7 +20,7 @@ async def _(event):
            roze = random.choice(razan)
            return await event.edit(f"{roze}")
 #by ~ @RR9R7
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اذكار المساء$",
     command=("اذكار المساء", plugin_category),)
 async def _(event):
@@ -29,7 +29,7 @@ async def _(event):
            return await event.edit(f"{ror}")
             
 #by ~ @RR 9R7
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="احاديث$",
     command=("احاديث", plugin_category),)
 async def _(event):
@@ -37,7 +37,7 @@ async def _(event):
            me = random.choice(roza)
            return await event.edit(f"{me}")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اذكار الاستيقاظ$",
     command=("اذكار الاستيقاظ", plugin_category),)
 async def _(event):
@@ -45,7 +45,7 @@ async def _(event):
            az = random.choice(rozan)
            return await event.edit(f"{az}")
                      
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اذكار النوم$",
     command=("اذكار النوم", plugin_category),)
 async def _(event):
@@ -53,7 +53,7 @@ async def _(event):
            rr = random.choice(rozmuh)
            return await event.edit(f"{rr}")
            
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اذكار الصلاة$",
     command=("اذكار الصلاة", plugin_category),)
 async def _(event):
@@ -62,7 +62,7 @@ async def _(event):
            return await event.edit(f"{rm}")
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اوامر الاذكار$",
     command=("اوامر الاذكار", plugin_category),)
 async def _(event):

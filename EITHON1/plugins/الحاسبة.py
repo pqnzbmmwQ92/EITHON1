@@ -3,7 +3,7 @@ import re
 from telethon import Button
 from telethon.events import CallbackQuery, InlineQuery
 
-from EITHON1 import CMD_HELP, jmthon
+from EITHON1 import CMD_HELP, EITHON1
 
 # 𝗧𝗲𝗹𝗲𝗚𝗿𝗮𝗠 : @EITHON1  ~ @TTTLL0
 from ..core.decorators import check_owner
@@ -39,7 +39,7 @@ lst = list(zip(tultd[::4], tultd[1::4], tultd[2::4], tultd[3::4]))
 lst.append([Button.inline("=", data="calc=")])
 
 
-@jmthon.on(admin_cmd(pattern="حاسبة(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern="حاسبة(?:\s|$)([\s\S]*)"))
 async def icalc(e):
     if e.client._bot:
         return await e.reply(
@@ -50,7 +50,7 @@ async def icalc(e):
     await e.delete()
 
 
-@jmthon.tgbot.on(InlineQuery)
+@EITHON1.tgbot.on(InlineQuery)
 async def inlinecalc(event):
     query_user_id = event.query.user_id
     query = event.text
@@ -66,7 +66,7 @@ async def inlinecalc(event):
 
 
 # 𝗧𝗲𝗹𝗲𝗚𝗿𝗮𝗠 : @EITHON1  ~ @TTTLL0
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(b"calc(.*)")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(b"calc(.*)")))
 @check_owner
 async def _(e):  # sourcery no-metrics
     x = (e.data_match.group(1)).decode()
@@ -132,7 +132,7 @@ async def _(e):  # sourcery no-metrics
 
 
 # 𝗧𝗲𝗹𝗲𝗚𝗿𝗮𝗠 : @EITHON1  ~ @TTTLL0
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(b"recalc")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(b"recalc")))
 @check_owner
 async def _(e):
     m = [

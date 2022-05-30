@@ -11,7 +11,7 @@ from telethon.errors.rpcerrorlist import (
 )
 from telethon.events import CallbackQuery
 
-from EITHON1 import StartTime, jmthon, JMVERSION
+from EITHON1 import StartTime, EITHON1, JMVERSION
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
@@ -22,7 +22,7 @@ from . import mention
 
 plugin_category = "utils"
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="المطور$",
     command=("المطور", plugin_category),
     info={
@@ -52,7 +52,7 @@ async def amireallyalive(event):
             event.chat_id, PIC, caption=cat_caption, reply_to=reply_to_id
         )
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(b"stats")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(b"stats")))
 async def on_plug_in_callback_query_handler(event):
     statstext = await catalive(StartTime)
     await event.answer(statstext, cache_time=0, alert=True)

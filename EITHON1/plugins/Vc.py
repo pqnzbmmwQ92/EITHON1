@@ -6,7 +6,7 @@ from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
 from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from ..core.managers import edit_delete, edit_or_reply
 
 async def get_call(event):
@@ -18,7 +18,7 @@ def user_list(l, n):
     for i in range(0, len(l), n):
         yield l[i : i + n]
 
-@jmthon.on(admin_cmd(pattern="دعوه للمكالمه(?: |$)(.*)"))
+@EITHON1.on(admin_cmd(pattern="دعوه للمكالمه(?: |$)(.*)"))
 async def _(e):
     ok = await edit_or_reply(e, "`Inviting Members to Voice Chat...`")
     users = []
@@ -34,7 +34,7 @@ async def _(e):
         except BaseException:
             pass
     await ok.edit(f"`Invited {z} users`")
-@jmthon.on(admin_cmd(pattern="بدء مكالمه(?: |$)(.*)"))
+@EITHON1.on(admin_cmd(pattern="بدء مكالمه(?: |$)(.*)"))
 async def _(e):
     try:
         await e.client(startvc(e.chat_id))
@@ -69,7 +69,7 @@ R = [
     "**-** قناة السورس **⪼ [𐇮 ايــثــون ](t.me/EITHON1)   "
 ]
 
-@jmthon.on(admin_cmd(pattern="بلي$"))
+@EITHON1.on(admin_cmd(pattern="بلي$"))
 async def ithker(knopis):
     await knopis.edit(choice(R))
 
@@ -115,7 +115,7 @@ Citation_morning = [
 ]
 
 
-@jmthon.on(admin_cmd(pattern="اذكار$"))
+@EITHON1.on(admin_cmd(pattern="اذكار$"))
 async def ithker(knopis):
     await knopis.edit(choice(Citation_morning))
 
@@ -153,7 +153,7 @@ Citation1_morning = [
 ]
 
 
-@jmthon.on(admin_cmd(pattern="كت$"))
+@EITHON1.on(admin_cmd(pattern="كت$"))
 async def ithker(knopis):
     await knopis.edit(choice(Citation1_morning))
 
@@ -191,12 +191,12 @@ EITHON1_5erok = [
 ]
 
 
-@jmthon.on(admin_cmd(pattern="خيروك$"))
+@EITHON1.on(admin_cmd(pattern="خيروك$"))
 async def ithker(knopis):
     await knopis.edit(choice(EITHON1_5erok))
 
     
-@jmthon.on(admin_cmd(pattern="اذكار عشر$"))    
+@EITHON1.on(admin_cmd(pattern="اذكار عشر$"))    
 async def ithker(event):
     "h"
     event = await edit_or_reply(event, "أَصْبَـحْـنا عَلَى فِطْرَةِ الإسْلاَمِ")
@@ -231,7 +231,7 @@ EITHON1_Shnow = [
 ]
 
 
-@jmthon.on(admin_cmd(pattern="شنو رأيك بهذا$"))
+@EITHON1.on(admin_cmd(pattern="شنو رأيك بهذا$"))
 async def ithker(knopis):
     await knopis.edit(choice(EITHON1_Shnow))
 
@@ -245,6 +245,6 @@ EITHON1_Bosa = [
 ]
 
 
-@jmthon.on(admin_cmd(pattern="بوسة$"))
+@EITHON1.on(admin_cmd(pattern="بوسة$"))
 async def ithker(knopis):
     await knopis.edit(choice(EITHON1_Bosa))

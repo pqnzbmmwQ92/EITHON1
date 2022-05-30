@@ -7,7 +7,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 from ..sql_helper.globals import gvarstatus
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EITHON1.core.logger import logging
 
 from ..Config import Config
@@ -74,7 +74,7 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="كشف(?:\s|$)([\s\S]*)",
     command=("كشف", plugin_category),
     info={
@@ -144,7 +144,7 @@ async def _(event):
     await edit_or_reply(catevent, caption)
 
 
-@jmthon.on(admin_cmd(pattern=f"{ID_EDIT}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{ID_EDIT}(?:\s|$)([\s\S]*)"))
 async def who(event):
     "Gets info of an user"
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
@@ -176,7 +176,7 @@ async def who(event):
         await cat.edit(caption, parse_mode="html")
 #كـتابة  @RR7PP
 #تعديل وترتيب  @SBB_B
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="رابط الحساب(?:\s|$)([\s\S]*)",
     command=("رابط الحساب", plugin_category),
     info={
@@ -194,7 +194,7 @@ async def permalink(mention):
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(mention, f"⌔︙[{tag}](tg://user?id={user.id})")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="(الايدي|id)(?:\s|$)([\s\S]*)",
     command=("الايدي", plugin_category),
     info={

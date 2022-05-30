@@ -1,5 +1,5 @@
 #
-from EITHON1 import CMD_HELP, jmthon
+from EITHON1 import CMD_HELP, EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 
@@ -8,7 +8,7 @@ plugin_category = "extra"
 name = "Profile Photos"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="صورة(?: |$)(.*)",
     command=("صورة", plugin_category),
     info={

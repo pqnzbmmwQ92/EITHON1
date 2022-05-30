@@ -7,12 +7,12 @@ Fetch App Details from Playstore.
 import bs4
 import requests
 
-from . import ALIVE_NAME, jmthon, edit_or_reply
+from . import ALIVE_NAME, EITHON1, edit_or_reply
 
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="app ([\s\S]*)",
     command=("app", plugin_category),
     info={

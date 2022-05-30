@@ -3,7 +3,7 @@ from telethon.errors.rpcerrorlist import UserAdminInvalidError, UserIdInvalidErr
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _format
@@ -16,7 +16,7 @@ NO_ADMIN = "**⌯︙ عذرا انا لست مشرف في المجموعة ❕**
 NO_PERM = "**⌯︙يبـدو انه ليس لديك صلاحيات كافية هذا حزين جدا 🥱♥**"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="كتم_مؤقت(?:\s|$)([\s\S]*)",
     command=("كتم_مؤقت", plugin_category),
     info={
@@ -103,7 +103,7 @@ async def tmuter(event):  # sourcery no-metrics
         return await catevent.edit(f"`{str(e)}`")
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="حظر_مؤقت(?:\s|$)([\s\S]*)",
     command=("حظر_مؤقت", plugin_category),
     info={

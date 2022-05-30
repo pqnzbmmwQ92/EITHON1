@@ -7,7 +7,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.types import ChatBannedRights
 
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format
@@ -20,7 +20,7 @@ plugin_category = "admin"
 # Copyright (C) 2021 Ξ𝗜𝗧𝗛𝗢𝗡™ TEAM
 # FILES WRITTEN BY  @RR7PP
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="قفل (.*)",
     command=("قفل", plugin_category),
     info={
@@ -208,7 +208,7 @@ async def _(event):  # sourcery no-metrics
             )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="فتح (.*)",
     command=("فتح", plugin_category),
     info={
@@ -396,7 +396,7 @@ async def _(event):  # sourcery no-metrics
             )
 
 # BY  @RR7PP  -  @UUNZZ
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الصلاحيات$",
     command=("الصلاحيات", plugin_category),
     info={
@@ -456,7 +456,7 @@ async def _(event):  # sourcery no-metrics
     await edit_or_reply(event, res)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="plock (.*)",
     command=("plock", plugin_category),
     info={
@@ -703,7 +703,7 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="punlock (.*)",
     command=("punlock", plugin_category),
     info={
@@ -954,7 +954,7 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="uperm(?: |$)(.*)",
     command=("uperm", plugin_category),
     info={
@@ -1031,7 +1031,7 @@ async def _(event):  # sourcery no-metrics
     await edit_or_reply(event, output)
 
 
-@jmthon.ar_cmd(incoming=True)
+@EITHON1.ar_cmd(incoming=True)
 async def check_incoming_messages(event):  # sourcery no-metrics
     if not event.is_private:
         chat = await event.get_chat()
@@ -1097,7 +1097,7 @@ async def check_incoming_messages(event):  # sourcery no-metrics
                 update_lock(peer_id, "url", False)
 
 
-@jmthon.on(events.ChatAction())
+@EITHON1.on(events.ChatAction())
 async def _(event):
     if not event.is_private:
         chat = await event.get_chat()

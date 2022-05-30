@@ -1,6 +1,6 @@
 import re
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_or_reply
 from ..sql_helper.filter_sql import (
@@ -15,7 +15,7 @@ plugin_category = "utils"
 ROZTEXT = "عـذرا لا يمكـنك اضافـة رد هـنا" 
 
 
-@jmthon.ar_cmd(incoming=True)
+@EITHON1.ar_cmd(incoming=True)
 async def filter_incoming_handler(handler):  # sourcery no-metrics
     if handler.sender_id == handler.client.uid:
         return
@@ -85,7 +85,7 @@ async def filter_incoming_handler(handler):  # sourcery no-metrics
                 )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اضف رد ([\s\S]*)",
     command=("اضف رد", plugin_category),
     info={
@@ -150,7 +150,7 @@ async def add_new_filter(new_handler):
     await edit_or_reply(new_handler, f"Error while setting filter for {keyword}")
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الردود$",
     command=("الردود", plugin_category),
     info={
@@ -175,7 +175,7 @@ async def on_snip_list(event):
     )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="حذف رد ([\s\S]*)",
     command=("حذف رد", plugin_category),
     info={
@@ -192,7 +192,7 @@ async def remove_a_filter(r_handler):
         await r_handler.edit("⌯︙الـرد {} تـم حـذفة بنـجـاح  ✅".format(filt))
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="حذف الردود$",
     command=("حذف الردود", plugin_category),
     info={

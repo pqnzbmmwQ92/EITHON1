@@ -6,7 +6,7 @@ from telethon.errors import ChatAdminRequiredError as no_admin
 from telethon.tl.functions.messages import ExportChatInviteRequest
 
 from EIT.razan.resources.strings import *
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EITHON1.utils import admin_cmd
 
 from ..core.managers import edit_or_reply
@@ -15,7 +15,7 @@ from ..helpers import get_user_from_event
 from . import *
 
 
-@jmthon.on(admin_cmd(pattern="كتابة(?: |$)(.*)"))
+@EITHON1.on(admin_cmd(pattern="كتابة(?: |$)(.*)"))
 async def _(event):
     t = event.pattern_match.group(1)
     if not (t or t.isdigit()):
@@ -33,7 +33,7 @@ async def _(event):
         await asyncio.sleep(t)
 
 
-@jmthon.on(admin_cmd(pattern="صوتية(?: |$)(.*)"))
+@EITHON1.on(admin_cmd(pattern="صوتية(?: |$)(.*)"))
 async def _(event):
     t = event.pattern_match.group(1)
     if not (t or t.isdigit()):
@@ -51,7 +51,7 @@ async def _(event):
         await asyncio.sleep(t)
 
 
-@jmthon.on(admin_cmd(pattern="فيد(?: |$)(.*)"))
+@EITHON1.on(admin_cmd(pattern="فيد(?: |$)(.*)"))
 async def _(event):
     t = event.pattern_match.group(1)
     if not (t or t.isdigit()):
@@ -69,7 +69,7 @@ async def _(event):
         await asyncio.sleep(t)
 
 
-@jmthon.on(admin_cmd(pattern="لعبة(?: |$)(.*)"))
+@EITHON1.on(admin_cmd(pattern="لعبة(?: |$)(.*)"))
 async def _(event):
     t = event.pattern_match.group(1)
     if not (t or t.isdigit()):
@@ -87,7 +87,7 @@ async def _(event):
         await asyncio.sleep(t)
 
 
-@jmthon.on(admin_cmd(pattern="الرابط$"))
+@EITHON1.on(admin_cmd(pattern="الرابط$"))
 async def _(e):
     rr = await edit_or_reply(e, "**يتم جلب الرابط انتظر **")
     try:
@@ -99,7 +99,7 @@ async def _(e):
     await eod(rr, f"- رابط الدردشة\n {r.link}")
 
 
-@jmthon.on(admin_cmd(pattern="للكل تاك$"))
+@EITHON1.on(admin_cmd(pattern="للكل تاك$"))
 async def listall(EITHON1):
     if EITHON1.fwd_from:
         return
@@ -122,7 +122,7 @@ R = (
 )
 
 
-@jmthon.on(admin_cmd(pattern=r"سبونج"))
+@EITHON1.on(admin_cmd(pattern=r"سبونج"))
 async def kerz(kerz):
     await kerz.edit(R)
 
@@ -138,7 +138,7 @@ M = (
 )
 
 
-@jmthon.on(admin_cmd(pattern=r"كلب"))
+@EITHON1.on(admin_cmd(pattern=r"كلب"))
 async def dog(dog):
     await dog.edit(M)
 Z = (
@@ -188,21 +188,21 @@ N = (
 
 
 
-@jmthon.on(admin_cmd(pattern=r"ذئب"))
+@EITHON1.on(admin_cmd(pattern=r"ذئب"))
 async def fox(fox):
     await fox.edit(H)
 
 
-@jmthon.on(admin_cmd(pattern=r"فيل"))
+@EITHON1.on(admin_cmd(pattern=r"فيل"))
 async def elephant(elephant):
     await elephant.edit(A)
 
 
-@jmthon.on(admin_cmd(pattern=r"هومر"))
+@EITHON1.on(admin_cmd(pattern=r"هومر"))
 async def homer(homer):
     await homer.edit(N)
 
 
-@jmthon.on(admin_cmd(pattern=r"بك"))
+@EITHON1.on(admin_cmd(pattern=r"بك"))
 async def pig(pig):
     await pig.edit(Z)

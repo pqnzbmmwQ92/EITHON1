@@ -1,10 +1,10 @@
 from EITHON1 import *
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from ..Config import Config
 from ..sql_helper.globals import gvarstatus
 
 EITHON1_CMD = Config.SCPIC_CMD or "ذاتية"
-@jmthon.on(admin_cmd(pattern=f"{EITHON1_CMD}"))
+@EITHON1.on(admin_cmd(pattern=f"{EITHON1_CMD}"))
 async def dato(event):
     if not event.is_reply:
         return await event.edit("..")

@@ -14,7 +14,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                        MessageMediaPhoto)
 from EITHON1.utils import admin_cmd
 from ..Config import Config
-from EITHON1 import CMD_HELP, jmthon
+from EITHON1 import CMD_HELP, EITHON1
 up_admin = Config.UP_ET or "ارفع"
 down_admin = Config.DOWN_ET or "نزل"
 async def get_full_user(event):  
@@ -58,7 +58,7 @@ async def get_user_from_id(user, event):
         await event.edit(str(err))
         return None
     return user_obj
-@jmthon.on(admin_cmd(pattern="{up_admin} ?(.*)"))
+@EITHON1.on(admin_cmd(pattern="{up_admin} ?(.*)"))
 async def gben(EITHON1):
     dc = razan = EITHON1
     i = 0
@@ -78,7 +78,7 @@ async def gben(EITHON1):
     except:
         pass
     if me == user:
-       jmthon = await razan.edit("▾∮ لا استطيع رفع نفسي 🧸🤍،")
+       EITHON1 = await razan.edit("▾∮ لا استطيع رفع نفسي 🧸🤍،")
        return
     try:
         if not rank:
@@ -109,7 +109,7 @@ async def gben(EITHON1):
         f"**▾∮المستخدم [{user.first_name}](tg://user?id={user.id})\n▾∮ تم رفعه في : {i} من المجموعات**"
     )
 
-@jmthon.on(admin_cmd(pattern="{down_admin} ?(.*)"))
+@EITHON1.on(admin_cmd(pattern="{down_admin} ?(.*)"))
 async def gben(EITHON1):
     dc = razan = EITHON1
     i = 0
@@ -129,7 +129,7 @@ async def gben(EITHON1):
     except:
         pass
     if me == user:
-       jmthon = await razan.edit("▾∮ لا استطيع تنزيل نفسي 🧸🤍")
+       EITHON1 = await razan.edit("▾∮ لا استطيع تنزيل نفسي 🧸🤍")
        return
     try:
         if not rank:

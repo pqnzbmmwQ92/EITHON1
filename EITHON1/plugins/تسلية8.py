@@ -8,7 +8,7 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_or_reply
 from ..helpers.functions import deEmojify, hide_inlinebot, waifutxt
@@ -28,7 +28,7 @@ async def get_font_file(client, channel_id, search_kw=""):
     return await client.download_media(font_file_message)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نص(?:\s|$)([\s\S]*)",
     command=("نص", plugin_category),
     info={
@@ -54,7 +54,7 @@ async def waifu(animu):
 
 
 # 12 21 28 30
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="ستيكر ?(?:(.*?) ?; )?([\s\S]*)",
     command=("ستيكر", plugin_category),
     info={
@@ -99,7 +99,7 @@ async def sticklet(event):
         ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)
     )
     image_stream = io.BytesIO()
-    image_stream.name = "jmthon.webp"
+    image_stream.name = "EITHON1.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
     # finally, reply the sticker
@@ -115,7 +115,7 @@ async def sticklet(event):
         pass
 
 # WRITED BY - @VUUZZ - @RR7PP
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="هونك(?:\s|$)([\s\S]*)",
     command=("هونك", plugin_category),
     info={
@@ -141,7 +141,7 @@ async def honk(event):
     await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تغريد(?:\s|$)([\s\S]*)",
     command=("تغريد", plugin_category),
     info={
@@ -167,7 +167,7 @@ async def twt(event):
     await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="دوغي(?:\s|$)([\s\S]*)",
     command=("دوغي", plugin_category),
     info={
@@ -193,7 +193,7 @@ async def doge(event):
     await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
 # WRITED BY - @VUUZZ - @RR7PP
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="غلاكس(|ر)(?:\s|$)([\s\S]*)",
     command=("غلاكس", plugin_category),
     info={

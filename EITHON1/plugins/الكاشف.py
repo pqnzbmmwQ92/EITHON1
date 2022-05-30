@@ -1,12 +1,12 @@
 import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from EITHON1 import CMD_HELP, jmthon
+from EITHON1 import CMD_HELP, EITHON1
 from . import parse_pre, sanga_seperator
 
 
-@jmthon.on(admin_cmd(pattern="(الاسماء|المعرفات)($| (.*))"))
-@jmthon.on(sudo_cmd(pattern="(الاسماء|المعرفات)($| (.*))", allow_sudo=True))
+@EITHON1.on(admin_cmd(pattern="(الاسماء|المعرفات)($| (.*))"))
+@EITHON1.on(sudo_cmd(pattern="(الاسماء|المعرفات)($| (.*))", allow_sudo=True))
 async def _(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()

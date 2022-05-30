@@ -2,12 +2,12 @@
 # FILES WRITTEN BY  @RR7PP
 from covid import Covid
 
-from . import jmthon, covidindia, edit_delete, edit_or_reply
+from . import EITHON1, covidindia, edit_delete, edit_or_reply
 
 plugin_category = "extra"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="كورونا(?:\s|$)([\s\S]*)",
     command=("كورونا", plugin_category),
     info={

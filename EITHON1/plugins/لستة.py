@@ -6,12 +6,12 @@ import re
 from telethon import Button
 
 from ..Config import Config
-from . import jmthon, edit_delete, reply_id
+from . import EITHON1, edit_delete, reply_id
 
 plugin_category = "tools"
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="لستة(?: |$)(.*)",
     command=("لستة", plugin_category),
     info={

@@ -7,7 +7,7 @@ from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChatBannedRights
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format
@@ -19,7 +19,7 @@ plugin_category = "admin"
 
 #=================== الكـــــــــــــــتم  ===================  #
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="كتم(?:\s|$)([\s\S]*)",
     command=("كتم", plugin_category),
 )
@@ -36,7 +36,7 @@ async def startgmute(event):
             return
         if user.id == 5302507827:
             return await edit_delete(event, "**- لا يمڪنني كتم مطـوري يافرخ دي لك**")
-        if user.id == jmthon.uid:
+        if user.id == EITHON1.uid:
             return await edit_or_reply(event, "**✪... . لمـاذا تࢪيـد كتم نفسـك؟  ...✪**")
         userid = user.id
     try:
@@ -83,7 +83,7 @@ async def startgmute(event):
 
 #=================== الغـــــــــــــاء الكـــــــــــــــتم  ===================  #
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الغاء كتم(?:\s|$)([\s\S]*)",
     command=("الغاء كتم", plugin_category),
     info={
@@ -103,7 +103,7 @@ async def endgmute(event):
         user, reason = await get_user_from_event(event)
         if not user:
             return
-        if user.id == jmthon.uid:
+        if user.id == EITHON1.uid:
             return await edit_or_reply(event, "**✪... لمـاذا تࢪيـد كتم نفسـك؟ ...✪**")
         userid = user.id
     try:
@@ -146,7 +146,7 @@ async def endgmute(event):
 
 # ===================================== # 
 
-@jmthon.ar_cmd(incoming=True)
+@EITHON1.ar_cmd(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()

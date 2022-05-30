@@ -1,6 +1,6 @@
 from urlextract import URLExtract
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EITHON1.core.logger import logging
 
 from ..Config import Config
@@ -20,7 +20,7 @@ oldvars = {
 }
 
 
-@jmthon.ar_cmd(pattern="اضف (.*)")
+@EITHON1.ar_cmd(pattern="اضف (.*)")
 async def custom_EITHON1(event):
     reply = await event.get_reply_message()
     text = None
@@ -80,7 +80,7 @@ async def custom_EITHON1(event):
         )
 
 
-@jmthon.ar_cmd(pattern="حذف (.*)")
+@EITHON1.ar_cmd(pattern="حذف (.*)")
 async def custom_EITHON1(event):
     input_str = event.pattern_match.group(1)
     if (

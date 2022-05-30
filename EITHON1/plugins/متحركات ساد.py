@@ -1,14 +1,14 @@
-#edit  ~ @RR9R7 for Jmthon 
+#edit  ~ @RR9R7 for EITHON1 
 
 from telethon import events
 from EITHON1.utils import admin_cmd
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from . import *
  
 #جميع الحقوق محفوظة لسـورس ايــثــون تخـمط تبيـن فشلـك
 
 plugin_category = "extra"
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س1$",
     command=("س1", plugin_category),
            )
@@ -17,15 +17,15 @@ async def tmgif(event):
         return
     RR9R7 = await reply_id(event)
     if sad:
-        jmthon = f"**˛ EIT ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
-        jmthon += f"✛━━━━━━━━━━━━━✛\n"
-        jmthon += f"**الـمتحـرڪـة الأولـى **"
-        await event.client.send_file(event.chat_id, sad, caption=jmthon, reply_to=RR9R7)
+        EITHON1 = f"**˛ EIT ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        EITHON1 += f"✛━━━━━━━━━━━━━✛\n"
+        EITHON1 += f"**الـمتحـرڪـة الأولـى **"
+        await event.client.send_file(event.chat_id, sad, caption=EITHON1, reply_to=RR9R7)
 
-#edit  ~ @RR9R7 for Jmthon 
+#edit  ~ @RR9R7 for EITHON1 
 #جميع الحقوق محفوظة لسـورس ايــثــون تخـمط تبيـن فشلـك
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س2$",
     command=("س2", plugin_category),
            )
@@ -39,10 +39,10 @@ async def tmgif(event):
         RAZAN += f"**الـمتحـرڪـة الـثـانيـة **"
         await event.client.send_file(event.chat_id, sad2, caption=RAZAN, reply_to=leo)
 
-#edit  ~ @RR9R7 for Jmthon 
+#edit  ~ @RR9R7 for EITHON1 
 #جميع الحقوق محفوظة لسـورس ايــثــون تخـمط تبيـن فشلـك
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س3$",
     command=("س3", plugin_category),
            )
@@ -56,10 +56,10 @@ async def tmgif(event):
         RAZAN += f"**الـمتحـرڪـة الـثـالثـة**\n"
         await event.client.send_file(event.chat_id, sad3, caption=RAZAN, reply_to=sic_id)
 
-#edit  ~ @RR9R7 for Jmthon 
+#edit  ~ @RR9R7 for EITHON1 
 #جميع الحقوق محفوظة لسـورس ايــثــون تخـمط تبيـن فشلـك
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س4$",
     command=("س4", plugin_category),
            )
@@ -75,10 +75,10 @@ async def tmgif(event):
             event.chat_id, sad4, caption=RAZAN, reply_to=reply_to_id
         )
 
-#edit  ~ @RR9R7 for Jmthon 
+#edit  ~ @RR9R7 for EITHON1 
 #جميع الحقوق محفوظة لسـورس ايــثــون تخـمط تبيـن فشلـك
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س5$",
     command=("س5", plugin_category),
            )
@@ -95,10 +95,10 @@ async def tmgif(event):
             event.chat_id, sad5, caption=RAZAN, reply_to=reply_to_id
         )
 
-#edit  ~ @RR9R7 for Jmthon 
+#edit  ~ @RR9R7 for EITHON1 
 #جميع الحقوق محفوظة لسـورس ايــثــون تخـمط تبيـن فشلـك
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س6$",
     command=("س6", plugin_category),
            )
@@ -115,10 +115,10 @@ async def tmgif(event):
             event.chat_id, sad6, caption=RAZAN, reply_to=reply_to_id
         )
 
-#edit  ~ @RR9R7 for Jmthon 
+#edit  ~ @RR9R7 for EITHON1 
 #جميع الحقوق محفوظة لسـورس ايـــثــون تخـمط تبيـن فشلـك
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س7$",
     command=("س7", plugin_category),
            )
@@ -135,7 +135,7 @@ async def tmgif(event):
         )
       
       
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س8$",
     command=("س8", plugin_category),
            )
@@ -151,7 +151,7 @@ async def tmgif(event):
             event.chat_id, sad8, caption=RAZAN, reply_to=reply_to_id
         )
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="س9$",
     command=("س9", plugin_category),
            )
@@ -166,5 +166,5 @@ async def tmgif(event):
         await event.client.send_file(
             event.chat_id, sad9, caption=RAZAN, reply_to=reply_to_id
         )
-#edit  ~ @RR9R7 for Jmthon 
+#edit  ~ @RR9R7 for EITHON1 
 #جميع الحقوق محفوظة لسـورس ايــثــون تخـمط تبيـن فشلـك

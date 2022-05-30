@@ -3,7 +3,7 @@
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.utils import get_display_name
 
-from .. import jmthon
+from .. import EITHON1
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format, get_user_from_event
@@ -13,7 +13,7 @@ plugin_category = "tools"
 
 LOGS = logging.getLogger(__name__)
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="رسالة(?:\s|$)([\s\S]*)",
     command=("رسالة", plugin_category),
 

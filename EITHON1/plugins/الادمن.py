@@ -23,7 +23,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -51,7 +51,7 @@ BANNED_RIGHTS = ChatBannedRights(
     send_inline=True,
     embed_links=True,
 )
-#admin plugin for  jmthon
+#admin plugin for  EITHON1
 UNBAN_RIGHTS = ChatBannedRights(
     until_date=None,
     send_messages=None,
@@ -71,7 +71,7 @@ plugin_category = "aadmin"
 # ================================================
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الصورة( -وضع| -حذف)$",
     command=("الصورة", plugin_category),
     info={
@@ -133,7 +133,7 @@ async def set_group_photo(event):  # sourcery no-metrics
         )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="رفع مشرف(?:\s|$)([\s\S]*)",
     command=("رفع مشرف", plugin_category),
     info={
@@ -147,7 +147,7 @@ async def set_group_photo(event):  # sourcery no-metrics
     },
     groups_only=True,
     require_admin=True,
-)#admin plugin for  jmthon
+)#admin plugin for  EITHON1
 async def promote(event):
     "⌯︙لـرفع مستـخدم مشـرف في الـكروب"
     new_rights = ChatAdminRights(
@@ -178,7 +178,7 @@ async def promote(event):
         )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تنزيل الكل(?:\s|$)([\s\S]*)",
     command=("تنزيل الكل", plugin_category),
     info={
@@ -220,7 +220,7 @@ async def demote(event):
             \nالمعرف: [{user.first_name}](tg://user?id={user.id})\
             \nالدردشه: {event.chat.title}(`{event.chat_id}`)",
         )
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="طرد(?:\s|$)([\s\S]*)",
     command=("طرد", plugin_category),
     info={
@@ -253,7 +253,7 @@ async def endmute(event):
         )
     else:
         await catevent.edit(f"⌯︙الـمستخدم [{user.first_name}](tg://user?id={user.id})\n ⌯︙تـم طرده بنجاح ✅ ")
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="حظر(?:\s|$)([\s\S]*)",
     command=("حظر", plugin_category),
     info={
@@ -316,7 +316,7 @@ async def _ban_person(event):
             )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الغاء حظر(?:\s|$)([\s\S]*)",
     command=("الغاء حظر", plugin_category),
     info={
@@ -355,7 +355,7 @@ async def nothanos(event):
         await catevent.edit(f"**خـطأ :**\n`{e}`")
 
 
-@jmthon.ar_cmd(incoming=True)
+@EITHON1.ar_cmd(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, event.chat_id):
         try:

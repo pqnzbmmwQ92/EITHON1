@@ -12,7 +12,7 @@ from telethon.errors.rpcerrorlist import (
 )
 from telethon.events import CallbackQuery
 
-from EITHON1 import StartTime, jmthon, JMVERSION
+from EITHON1 import StartTime, EITHON1, JMVERSION
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
@@ -25,7 +25,7 @@ plugin_category = "utils"
 
 #كتـابة وتعـديل:  @TTTLL0
 ALIVE_ET = Config.ALIVE_ET or "فحص"
-@jmthon.on(admin_cmd(pattern=f"{ALIVE_ET}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{ALIVE_ET}(?:\s|$)([\s\S]*)"))
     
 async def amireallyalive(event):
     "للتـأكد من ان البـوت يعـمـل"
@@ -39,8 +39,8 @@ async def amireallyalive(event):
     EMOJI = gvarstatus("ALIVE_EMOJI") or "✪ ◅"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**[ Ξ𝗜𝗧𝗛𝗢𝗡™ ](t.me/EITHON1)**"
     RR7_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC
-    jmthon_caption = gvarstatus("ALIVE_TEMPLATE") or temp
-    caption = jmthon_caption.format(
+    EITHON1_caption = gvarstatus("ALIVE_TEMPLATE") or temp
+    caption = EITHON1_caption.format(
         ALIVE_TEXT=ALIVE_TEXT,
         EMOJI=EMOJI,
         mention=mention,

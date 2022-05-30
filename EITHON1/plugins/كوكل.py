@@ -14,7 +14,7 @@ from PIL import Image
 from search_engine_parser import BingSearch, GoogleSearch, YahooSearch
 from search_engine_parser.core.exceptions import NoResultsOrTrafficError
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -63,7 +63,7 @@ async def scam(results, lim):
     return imglinks
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="كوكل بحث ([\s\S]*)",
     command=("كوكل بحث", plugin_category),
     info={
@@ -146,7 +146,7 @@ async def gsearch(q_event):
         )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="البحث عن$",
     command=("البحث عن", plugin_category),
     info={
@@ -222,7 +222,7 @@ async def _(event):
 
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="كوكل(?:\s|$)([\s\S]*)",
     command=("كوكل", plugin_category),
     info={

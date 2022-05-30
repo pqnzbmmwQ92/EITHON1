@@ -17,7 +17,7 @@ from telethon.tl import functions
 from ..Config import Config
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-from . import AUTONAME, DEFAULT_BIO, edit_delete, jmthon, logging
+from . import AUTONAME, DEFAULT_BIO, edit_delete, EITHON1, logging
 
 plugin_category = "tools"
 
@@ -60,16 +60,16 @@ async def digitalpicloop():
         fnt = ImageFont.truetype(roz, 65)
         drawn_text.text((300, 400), current_time, font=fnt, fill=(280, 280, 280))
         img.save(autophoto_path)
-        file = await jmthon.upload_file(autophoto_path)
+        file = await EITHON1.upload_file(autophoto_path)
         try:
             if i > 0:
-                await jmthon(
+                await EITHON1(
                     functions.photos.DeletePhotosRequest(
-                        await jmthon.get_profile_photos("me", limit=1)
+                        await EITHON1.get_profile_photos("me", limit=1)
                     )
                 )
             i += 1
-            await jmthon(functions.photos.UploadProfilePhotoRequest(file))
+            await EITHON1(functions.photos.UploadProfilePhotoRequest(file))
             os.remove(autophoto_path)
             await asyncio.sleep(60)
         except BaseException:
@@ -89,7 +89,7 @@ async def autoname_loop():
         name = f"{RR7PP} {HM}"
         LOGS.info(name)
         try:
-            await jmthon(functions.account.UpdateProfileRequest(first_name=name))
+            await EITHON1(functions.account.UpdateProfileRequest(first_name=name))
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
@@ -109,7 +109,7 @@ async def autobio_loop():
         bio = f"{DEFAULTUSERBIO} {HI}"
         LOGS.info(bio)
         try:
-            await jmthon(functions.account.UpdateProfileRequest(about=bio))
+            await EITHON1(functions.account.UpdateProfileRequest(about=bio))
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
@@ -117,7 +117,7 @@ async def autobio_loop():
         AUTOBIOSTART = gvarstatus("autobio") == "true"
 
 
-@jmthon.on(admin_cmd(pattern=f"{phow8t}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{phow8t}(?:\s|$)([\s\S]*)"))
 async def _(event):
     "To set random colour pic with time to profile pic"
     downloader = SmartDL(digitalpfp, digitalpic_path, progress_bar=False)
@@ -131,7 +131,7 @@ async def _(event):
     await digitalpicloop()
 
 
-@jmthon.on(admin_cmd(pattern=f"{namew8t}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{namew8t}(?:\s|$)([\s\S]*)"))
 async def _(event):
     "To set your display name along with time"
     if gvarstatus("autoname") is not None and gvarstatus("autoname") == "true":
@@ -141,7 +141,7 @@ async def _(event):
     await autoname_loop()
 
 
-@jmthon.on(admin_cmd(pattern=f"{biow8t}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{biow8t}(?:\s|$)([\s\S]*)"))
 async def _(event):
     "To update your bio along with time"
     if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
@@ -151,7 +151,7 @@ async def _(event):
     await autobio_loop()
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="انهاء ([\s\S]*)",
     command=("انهاء", plugin_category),
 )
@@ -197,6 +197,6 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-jmthon.loop.create_task(digitalpicloop())
-jmthon.loop.create_task(autoname_loop())
-jmthon.loop.create_task(autobio_loop())
+EITHON1.loop.create_task(digitalpicloop())
+EITHON1.loop.create_task(autoname_loop())
+EITHON1.loop.create_task(autobio_loop())

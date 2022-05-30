@@ -1,13 +1,13 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..helpers.utils import get_user_from_event, reply_id
 
 plugin_category = "extra"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="(للكل|all)(?:\s|$)([\s\S]*)",
     command=("للكل", plugin_category),
     info={
@@ -30,7 +30,7 @@ async def _(event):
     await event.delete()
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="ابلاغ$",
     command=("ابلاغ", plugin_category),
     info={
@@ -52,7 +52,7 @@ async def _(event):
     await event.delete()
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تاك([\s\S]*)",
     command=("تاك", plugin_category),
     info={

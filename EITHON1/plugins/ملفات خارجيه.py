@@ -6,14 +6,14 @@ from telethon.tl.types import InputMessagesFilterDocument
 from ..Config import Config
 from ..helpers.utils import install_pip
 from ..utils import load_module
-from . import BOTLOG, BOTLOG_CHATID, jmthon
+from . import BOTLOG, BOTLOG_CHATID, EITHON1
 
 plugin_category = "tools"
 
 if Config.PLUGIN_CHANNEL:
 
     async def install():
-        documentss = await jmthon.get_messages(
+        documentss = await EITHON1.get_messages(
             Config.PLUGIN_CHANNEL, None, filter=InputMessagesFilterDocument
         )
         total = int(documentss.total)
@@ -22,8 +22,8 @@ if Config.PLUGIN_CHANNEL:
             plugin_name = documentss[module].file.name
             if os.path.exists(f"EITHON1/plugins/{plugin_name}"):
                 return
-            downloaded_file_name = await jmthon.download_media(
-                await jmthon.get_messages(Config.PLUGIN_CHANNEL, ids=plugin_to_install),
+            downloaded_file_name = await EITHON1.download_media(
+                await EITHON1.get_messages(Config.PLUGIN_CHANNEL, ids=plugin_to_install),
                 "EITHON1/plugins/",
             )
             path1 = Path(downloaded_file_name)
@@ -40,9 +40,9 @@ if Config.PLUGIN_CHANNEL:
                     if check > 5:
                         break
             if BOTLOG:
-                await jmthon.send_message(
+                await EITHON1.send_message(
                     BOTLOG_CHATID,
                     f"⌯︙تـم تـنصـيب المـلف `{os.path.basename(downloaded_file_name)}` بـناج ✅.",
                 )
 
-    jmthon.loop.create_task(install())
+    EITHON1.loop.create_task(install())

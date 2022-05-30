@@ -4,7 +4,7 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import get_user_from_event, sanga_seperator
@@ -13,7 +13,7 @@ from ..helpers.utils import _format
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تاريخ(معرفات)?(?: |$)(.*)",
     command=("تاريخ", plugin_category),
     info={

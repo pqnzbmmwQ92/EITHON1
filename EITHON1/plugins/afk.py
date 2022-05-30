@@ -3,7 +3,7 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from EITHON1 import CMD_HELP, jmthon
+from EITHON1 import CMD_HELP, EITHON1
 
 from ..Config import Config
 from ..core.logger import logging
@@ -34,7 +34,7 @@ class AFK:
 AFK_ = AFK()
 
 
-@jmthon.ar_cmd(outgoing=True, edited=False)
+@EITHON1.ar_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:
         return
@@ -80,7 +80,7 @@ async def set_not_afk(event):
             )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False
 )
 async def on_afk(event):  # sourcery no-metrics
@@ -165,7 +165,7 @@ async def on_afk(event):  # sourcery no-metrics
             )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="سليب(?:\s|$)([\s\S]*)",
     command=("سليب", plugin_category),
     info={
@@ -225,7 +225,7 @@ async def _(event):
                 )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="سليب_ميديا(?:\s|$)([\s\S]*)",
     command=("سليب_ميديا", plugin_category),
     info={

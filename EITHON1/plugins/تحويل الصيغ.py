@@ -19,7 +19,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.functions.messages import SendMediaRequest
 from telethon.utils import get_attributes
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -52,7 +52,7 @@ thumb_loc = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 #Copyright  By  @EITHON1  © 2021
 #WRITE BY  @RR7PP  
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تحويل صورة$",
     command=("تحويل صورة", plugin_category),
     info={
@@ -81,7 +81,7 @@ async def _(event):
     await output[0].delete()
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تحويل ملصق$",
     command=("تحويل ملصق", plugin_category),
     info={
@@ -109,7 +109,7 @@ async def _(event):
     )
     await output[0].delete()
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تحويل (mp3|voice)$",
     command=("تحويل", plugin_category),
     info={
@@ -222,7 +222,7 @@ async def _(event):
 #Copyright  By  @EITHON1  © 2021
 #WRITE BY  @RR7PP
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تحويل متحركة ?([0-9.]+)?$",
     command=("تحويل متحركة", plugin_category),
     info={

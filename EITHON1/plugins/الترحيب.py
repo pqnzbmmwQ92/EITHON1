@@ -2,7 +2,7 @@
 # FILES WRITTEN BY  @TTTLL0
 from telethon import events
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EITHON1.core.logger import logging
 
 from ..core.managers import edit_delete, edit_or_reply
@@ -23,7 +23,7 @@ welcome = Config.WEL_ET or "ترحيب"
 rmvwelcome = Config.RMVWEL_ET or "حذف الترحيبات"
 allwelcome = Config.ALLWEL_ET or "الترحيبات"
 
-@jmthon.on(events.ChatAction)
+@EITHON1.on(events.ChatAction)
 async def _(event):  # sourcery no-metrics
     cws = get_current_welcome_settings(event.chat_id)
     if (
@@ -88,7 +88,7 @@ async def _(event):  # sourcery no-metrics
         update_previous_welcome(event.chat_id, current_message.id)
 
 
-@jmthon.on(admin_cmd(pattern=f"{welcome}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{welcome}(?:\s|$)([\s\S]*)"))
 async def save_welcome(event):
     "To set welcome message in chat."
     msg = await event.get_reply_message()
@@ -123,7 +123,7 @@ async def save_welcome(event):
     await edit_or_reply("⌯︙هـنالك خـطأ في وضـع الـترحيب هـنا")
 
 
-@jmthon.on(admin_cmd(pattern=f"{rmvwelcome}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{rmvwelcome}(?:\s|$)([\s\S]*)"))
 async def del_welcome(event):
     "To turn off welcome message"
     if rm_welcome_setting(event.chat_id) is True:
@@ -132,7 +132,7 @@ async def del_welcome(event):
         await edit_or_reply(event, "⌯︙ليـس لـدي اي تـرحيبـات بالأصـل")
 
 
-@jmthon.on(admin_cmd(pattern=f"{allwelcome}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{allwelcome}(?:\s|$)([\s\S]*)"))
 async def show_welcome(event):
     "To show current welcome message in group"
     cws = get_current_welcome_settings(event.chat_id)
@@ -152,7 +152,7 @@ async def show_welcome(event):
         )
         await event.reply(cws.reply)
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الترحيب السابق (تشغيل|ايقاف)$",
     command=("الترحيب السابق", plugin_category),
     info={

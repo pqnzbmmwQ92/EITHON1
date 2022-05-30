@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 import PIL.ImageOps
 
 from EITHON1.utils import admin_cmd, sudo_cmd
-from EITHON1 import LOGS, bot as jmthon
+from EITHON1 import LOGS, bot as EITHON1
 from EITHON1.helpers.functions import (
     convert_toimage,
     convert_tosticker,
@@ -45,8 +45,8 @@ async def crop(imagefile, endname, x):
     inverted_image.save(endname)
 
 
-@jmthon.on(admin_cmd(pattern="عكس اللون$", outgoing=True))
-@jmthon.on(sudo_cmd(pattern="عكس اللون$", allow_sudo=True))
+@EITHON1.on(admin_cmd(pattern="عكس اللون$", outgoing=True))
+@EITHON1.on(sudo_cmd(pattern="عكس اللون$", allow_sudo=True))
 async def memes(roz):
     reply = await roz.get_reply_message()
     if not (reply and (reply.media)):
@@ -127,7 +127,7 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="فلتر شمسي$"))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="فلتر شمسي$"))
 async def memes(roz):
     if roz.fwd_from:
         return
@@ -210,8 +210,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="عكس الصورة$"))
-@jmthon.on(sudo_cmd(pattern="عكس الصورة$", allow_sudo=True))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="عكس الصورة$"))
+@EITHON1.on(sudo_cmd(pattern="عكس الصورة$", allow_sudo=True))
 async def memes(roz):
     reply = await roz.get_reply_message()
     if not (reply and (reply.media)):
@@ -292,8 +292,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="قلب الصورة$"))
-@jmthon.on(sudo_cmd(pattern="قلب الصورة$", allow_sudo=True))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="قلب الصورة$"))
+@EITHON1.on(sudo_cmd(pattern="قلب الصورة$", allow_sudo=True))
 async def memes(roz):
     reply = await roz.get_reply_message()
     if not (reply and (reply.media)):
@@ -374,8 +374,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="فلتر رمادي$"))
-@jmthon.on(sudo_cmd(pattern="فلتر رمادي$", allow_sudo=True))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="فلتر رمادي$"))
+@EITHON1.on(sudo_cmd(pattern="فلتر رمادي$", allow_sudo=True))
 async def memes(roz):
     reply = await roz.get_reply_message()
     if not (reply and (reply.media)):
@@ -456,8 +456,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="زووم ?(.*)"))
-@jmthon.on(sudo_cmd(pattern="زووم ?(.*)", allow_sudo=True))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="زووم ?(.*)"))
+@EITHON1.on(sudo_cmd(pattern="زووم ?(.*)", allow_sudo=True))
 async def memes(roz):
     reply = await roz.get_reply_message()
     if not (reply and (reply.media)):
@@ -545,8 +545,8 @@ async def memes(roz):
             os.remove(files)
 
 
-@jmthon.on(admin_cmd(outgoing=True, pattern="اطار ?(.*)"))
-@jmthon.on(sudo_cmd(pattern="اطار ?(.*)", allow_sudo=True))
+@EITHON1.on(admin_cmd(outgoing=True, pattern="اطار ?(.*)"))
+@EITHON1.on(sudo_cmd(pattern="اطار ?(.*)", allow_sudo=True))
 async def memes(roz):
     reply = await roz.get_reply_message()
     if not (reply and (reply.media)):

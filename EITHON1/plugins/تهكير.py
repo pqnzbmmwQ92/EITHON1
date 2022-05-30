@@ -3,7 +3,7 @@
 
 import asyncio
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _format
@@ -12,7 +12,7 @@ from . import ALIVE_NAME
 plugin_category = "fun"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تهكير$",
     command=("تهكير", plugin_category),
     info={

@@ -4,12 +4,12 @@ import json
 import requests
 #
 from ..sql_helper.globals import gvarstatus
-from . import jmthon, edit_delete, edit_or_reply
+from . import EITHON1, edit_delete, edit_or_reply
 
 plugin_category = "extra"
 
 #
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="صلاة(?: |$)(.*)",
     command=("صلاة", plugin_category),
     info={
@@ -29,7 +29,7 @@ async def get_adzan(adzan):
         ) #ترجمه فريق جـيبثون على التيلكرام
         return
     result = json.loads(request.text)
-    jmthonresult = f"<b>اوقـات صـلاه المـسلمين 👳‍♂️ </b>\
+    EITHON1result = f"<b>اوقـات صـلاه المـسلمين 👳‍♂️ </b>\
             \n\n<b>المـدينة     : </b><i>{result['results']['location']['city']}</i>\
             \n<b>الـدولة  : </b><i>{result['results']['location']['country']}</i>\
             \n<b>التـاريخ     : </b><i>{result['results']['datetime'][0]['date']['gregorian']}</i>\
@@ -44,7 +44,7 @@ async def get_adzan(adzan):
             \n<b>العشـاء     : </b><i>{result['results']['datetime'][0]['times']['Isha']}</i>\
             \n<b>منتـصف الليل : </b><i>{result['results']['datetime'][0]['times']['Midnight']}</i>\
     "
-    await edit_or_reply(adzan, jmthonresult, "html")
+    await edit_or_reply(adzan, EITHON1result, "html")
 
 # Copyright (C) 2021 Ξ𝗜𝗧𝗛𝗢𝗡™ TEAM
 # FILES WRITTEN BY  @RR7PP

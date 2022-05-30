@@ -1,4 +1,4 @@
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _catutils, parse_pre, yaml_format
@@ -6,7 +6,7 @@ from ..helpers.utils import _catutils, parse_pre, yaml_format
 plugin_category = "tools"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الملفات$",
     command=("الملفات", plugin_category),
     info={
@@ -22,7 +22,7 @@ async def _(event):
     await edit_or_reply(event, OUTPUT)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="فاراتي$",
     command=("فاراتي", plugin_category),
     info={
@@ -40,7 +40,7 @@ async def _(event):
     )
     await edit_or_reply(event, OUTPUT)
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="متى$",
     command=("متى", plugin_category),
     info={

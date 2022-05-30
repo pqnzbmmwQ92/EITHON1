@@ -1,6 +1,6 @@
 import html
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_or_reply
 from ..sql_helper import warns_sql as sql
@@ -8,7 +8,7 @@ from ..sql_helper import warns_sql as sql
 plugin_category = "admin"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تحذير(?:\s|$)([\s\S]*)",
     command=("تحذير", plugin_category),
     info={
@@ -48,7 +48,7 @@ async def _(event):
     await edit_or_reply(event, reply)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="التحذيرات",
     command=("التحذيرات", plugin_category),
     info={
@@ -84,7 +84,7 @@ async def _(event):
     await event.edit(text)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="ح(ذف) ?التحذير$",
     command=("حذف التحذير", plugin_category),
     info={

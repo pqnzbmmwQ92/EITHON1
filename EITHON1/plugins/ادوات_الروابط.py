@@ -4,14 +4,14 @@
 import requests
 from validators.url import url
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="دنس(?:\s|$)([\s\S]*)",
     command=("دنس", plugin_category),
     info={
@@ -45,8 +45,8 @@ async def _(event):
             event, f"⌯︙- لم استطع ايجاد `{input_str}` في الانترنت"
         )
 
-# urltools for jmthon 
-@jmthon.ar_cmd(
+# urltools for EITHON1 
+@EITHON1.ar_cmd(
     pattern="مصغر(?:\s|$)([\s\S]*)",
     command=("مصغر", plugin_category),
     info={
@@ -82,9 +82,9 @@ async def _(event):
     else:
         await edit_or_reply(event, "⌯︙ هـنالك شي خطـا حاول لاحقـا")
 
-# urltools for jmthon
+# urltools for EITHON1
   
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اخفاء(?:\s|$)([\s\S]*)",
     command=("اخفاء", plugin_category),
     info={

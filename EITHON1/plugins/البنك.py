@@ -3,7 +3,7 @@ import os
 import asyncio
 from datetime import datetime
 
-from EITHON1 import CMD_HELP, jmthon
+from EITHON1 import CMD_HELP, EITHON1
 from . import hmention, reply_id
 
 """
@@ -19,7 +19,7 @@ PING_PIC = os.environ.get("PING_PIC") or ("https://telegra.ph/file/22aa9c0c7e5d8
 JM_TXT = os.environ.get("PING_TEXT") or "𝗜 𝗝𝘂𝘀𝘁 𝗔𝘀𝗸𝗲𝗱 𝗙𝗼𝗿 𝗦𝗼𝗺𝗲 𝗣𝗲𝗮𝗰𝗲 🎀 𝑆𝐻 : @EITHON1"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="بنك$",
     command=("بنك", plugin_category),
     info={

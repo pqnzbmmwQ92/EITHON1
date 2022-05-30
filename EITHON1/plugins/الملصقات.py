@@ -26,7 +26,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import animator, crop_and_divide
@@ -274,7 +274,7 @@ async def add_to_pack(
     return pack, packname
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="ملصق(?:\s|$)([\s\S]*)",
     command=("ملصق", plugin_category),
     info={
@@ -465,8 +465,8 @@ async def kang(args):  # sourcery no-metrics
                 )
 
 
-@jmthon.on(admin_cmd(pattern="حزمة"))
-async def jmthonpkg(_):
+@EITHON1.on(admin_cmd(pattern="حزمة"))
+async def EITHON1pkg(_):
     roz = await _.get_reply_message()
     if not roz:
         return await edit_or_reply(_, "**- يجب عليك الرد على حزمة  .**")
@@ -492,7 +492,7 @@ async def jmthonpkg(_):
         )
     try:
         short_name = (await _.client(SuggestShortNameRequest(_packname))).short_name
-        jmthon_roz = await bot(
+        EITHON1_roz = await bot(
             functions.stickers.CreateStickerSetRequest(
                 user_id=_.sender_id,
                 title=_packname,
@@ -504,9 +504,9 @@ async def jmthonpkg(_):
         LOGS.exception(er)
         return await edit_or_reply(_, str(er))
     await edit_or_reply(
-        _, f"**- تم اخذ الحزمه بنجاح ✓ \nالحزمه  → [اضغط هنا](https://t.me/addstickers/{jmthon_roz.set.short_name})**")
+        _, f"**- تم اخذ الحزمه بنجاح ✓ \nالحزمه  → [اضغط هنا](https://t.me/addstickers/{EITHON1_roz.set.short_name})**")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="معلومات_الملصق$",
     command=("معلومات_الملصق", plugin_category),
     info={
@@ -560,7 +560,7 @@ async def get_pack_info(event):
     await catevent.edit(OUTPUT)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الملصقات ?([\s\S]*)",
     command=("الملصقات", plugin_category),
     info={

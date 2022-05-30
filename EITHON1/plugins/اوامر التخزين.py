@@ -1,6 +1,6 @@
 import asyncio
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EITHON1.core.logger import logging
 
 from ..Config import Config
@@ -26,7 +26,7 @@ class LOG_CHATS:
 LOG_CHATS_ = LOG_CHATS()
 
 
-@jmthon.ar_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
+@EITHON1.ar_cmd(incoming=True, func=lambda e: e.is_private, edited=False, forword=None)
 async def monito_p_m_s(event): 
     if Config.PM_LOGGER_GROUP_ID == -100:
         return
@@ -65,7 +65,7 @@ async def monito_p_m_s(event):
             except Exception as e:
                 LOGS.warn(str(e))
                 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تخزين الخاص (تشغيل|ايقاف)$",
     command=("تخزين الخاص", plugin_category),
     info={
@@ -101,7 +101,7 @@ async def set_pmlog(event):
         await event.edit("**⌯︙ تـخزين رسـائل الخـاص بالفـعل معـطلة ✅**")
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تخزين الكروبات (تشغيل|ايقاف)$",
     command=("تخزين الكروبات", plugin_category),
     info={

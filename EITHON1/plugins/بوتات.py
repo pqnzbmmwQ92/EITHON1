@@ -4,10 +4,10 @@ from asyncio.exceptions import TimeoutError
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 # 
-@jmthon.on(admin_cmd(pattern="حالتي ?(.*)"))
+@EITHON1.on(admin_cmd(pattern="حالتي ?(.*)"))
 async def _(event):
     await event.edit("**- يتم التاكد من حالتك اذا كنت محظور او لا**")
     async with bot.conversation("@SpamBot") as conv:
@@ -24,7 +24,7 @@ async def _(event):
         await event.edit(f"- {response.message.message}\n @EITHON1")
 
 
-@jmthon.on(admin_cmd(pattern="الاغنية ?(.*)"))
+@EITHON1.on(admin_cmd(pattern="الاغنية ?(.*)"))
 async def _(event):
     "To reverse search music by bot."
     if not event.reply_to_msg_id:
@@ -60,7 +60,7 @@ async def _(event):
         return await event.edit("***حدث خطا ما حاول مجددا**")
 
 
-@jmthon.on(admin_cmd(pattern="ايميل وهمي(?: |$)(.*)"))
+@EITHON1.on(admin_cmd(pattern="ايميل وهمي(?: |$)(.*)"))
 async def _(event):
     chat = "@TempMailBot"
     geez = await event.edit("**جاري انشاء بريد ...**")
@@ -73,7 +73,7 @@ async def _(event):
             await asyncio.sleep(1)
             await conv.send_message("/create")
             response = await response
-            jmthon = (response).reply_markup.rows[2].buttons[0].url
+            EITHON1 = (response).reply_markup.rows[2].buttons[0].url
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
             await geez.edit("**الغي حظر @TempMailBot  و حاول مجددا**")

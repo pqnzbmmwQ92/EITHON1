@@ -7,7 +7,7 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 from EIT.razan.resources.strings import *
@@ -18,7 +18,7 @@ from . import spamwatch
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الحب(?:\s|$)([\s\S]*)",
     command=("نسبة الحب", plugin_category),
 )
@@ -33,7 +33,7 @@ async def permalink(mention):
     
     
    
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الانوثة(?:\s|$)([\s\S]*)",
     command=("نسبة الانوثة", plugin_category),
 )
@@ -48,7 +48,7 @@ async def permalink(mention):
     sos = random.choice(rr7)
     await edit_or_reply(mention, f"⌯︙نسبة الانوثة لـ [{muh}](tg://user?id={user.id}) هـي {sos} 🥵🖤")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الغباء(?:\s|$)([\s\S]*)",
     command=("نسبة الغباء", plugin_category),
 )
@@ -67,7 +67,7 @@ async def permalink(mention):
     rzona = random.choice(rr7)
     await edit_or_reply(mention, f"نسبة الغباء لـ [{muh}](tg://user?id={user.id}) هـي {rzona} 😂💔")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الكذب(?:\s|$)([\s\S]*)",
     command=("نسبة الكذب", plugin_category),
 )
@@ -82,7 +82,7 @@ async def permalink(mention):
     rzona = random.choice(rr7)
     await edit_or_reply(mention, f"نسبة الكذب لـ [{muh}](tg://user?id={user.id}) هـي {rzona} 😂💔")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الذكاء(?:\s|$)([\s\S]*)",
     command=("نسبة الذكاء", plugin_category),
 )
@@ -97,7 +97,7 @@ async def permalink(mention):
     rzona = random.choice(rr7)
     await edit_or_reply(mention, f"نسبة الذكاء لـ [{muh}](tg://user?id={user.id}) هـي {rzona}🎈🧸")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الشذوذ(?:\s|$)([\s\S]*)",
     command=("نسبة الشذوذ", plugin_category),
 )
@@ -112,7 +112,7 @@ async def permalink(mention):
     rzona = random.choice(rr7)
     await edit_or_reply(mention, f"نسبة الشذوذ 🏳️‍🌈 لـ [{muh}](tg://user?id={user.id}) هـي {rzona}🎈🧸")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الدياثه(?:\s|$)([\s\S]*)",
     command=("نسبة الدياثه", plugin_category),
 )
@@ -127,7 +127,7 @@ async def permalink(mention):
     rzona = random.choice(rr7)
     await edit_or_reply(mention, f"نسبة الدياثه لـ [{muh}](tg://user?id={user.id}) هـي {rzona}🎈🧸")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الخيانه(?:\s|$)([\s\S]*)",
     command=("نسبة الخيانه", plugin_category),
 )
@@ -142,7 +142,7 @@ async def permalink(mention):
     rzona = random.choice(rr7)
     await edit_or_reply(mention, f"نسبة الخيانه 🙎🏼‍♀️ لـ [{muh}](tg://user?id={user.id}) هـي {rzona}🎈🧸")
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="نسبة الجمال(?:\s|$)([\s\S]*)",
     command=("نسبة الجمال", plugin_category),
 )

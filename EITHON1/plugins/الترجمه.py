@@ -2,7 +2,7 @@ from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.globals import addgvar, gvarstatus
@@ -25,7 +25,7 @@ async def getTranslate(text, **kwargs):
     return result
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="ترجمه ([\s\S]*)",
     command=("ترجمه", plugin_category),
     info={

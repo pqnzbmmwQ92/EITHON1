@@ -1,9 +1,9 @@
 from telethon import *
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EITHON1.sql_helper.autopost_sql import add_post, get_all_post, is_post, remove_post
 from . import *
 
-@jmthon.on(admin_cmd(pattern="نشر_التلقائي ?(.*)"))
+@EITHON1.on(admin_cmd(pattern="نشر_التلقائي ?(.*)"))
 async def _(event):
     if (event.is_private or event.is_group):
         return await edit_or_reply(event, "امر التلقائي يستخدم فقط للقنوات")
@@ -20,7 +20,7 @@ async def _(event):
     await edit_or_reply(event, f"**📍 تم بدء امر التلقائي لقناه :** `{hel_}`")
 
 
-@jmthon.on(admin_cmd(pattern="ايقاف_النشر ?(.*)"))
+@EITHON1.on(admin_cmd(pattern="ايقاف_النشر ?(.*)"))
 async def _(event):
     if (event.is_private or event.is_group):
         return await edit_or_reply(event, "امر التلقائي يستخدم فقط للقنوات.")
@@ -36,7 +36,7 @@ async def _(event):
     remove_post(jp, event.chat_id)
     await edit_or_reply(event, f"**📍 تم ايقاف التلقائي لقناه : ** `{hel_}`")
 
-@jmthon.ar_cmd(incoming=True)
+@EITHON1.ar_cmd(incoming=True)
 async def _(event):
     if event.is_private:
         return

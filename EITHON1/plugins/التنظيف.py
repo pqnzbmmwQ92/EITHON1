@@ -16,7 +16,7 @@ from telethon.tl.types import (
     InputMessagesFilterVoice,
 )
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
@@ -42,7 +42,7 @@ purgetype = {
 }
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="مسح(\s*| \d+)$",
     command=("مسح", plugin_category),
     info={
@@ -89,7 +89,7 @@ async def delete_it(event):
         await event.delete()
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="حذف رسائلي$",
     command=("حذف رسائلي", plugin_category),
     info={
@@ -124,7 +124,7 @@ async def purgeme(event):
 
 
 # TODO: only sticker messages.
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="تنظيف(?:\s|$)([\s\S]*)",
     command=("تنظيف", plugin_category),
     info={

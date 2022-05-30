@@ -6,7 +6,7 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
@@ -44,7 +44,7 @@ async def get_tz(con):
         return
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="وقت(?:\s|$)([\s\S]*)(?<![0-9])(?: |$)([0-9]+)?",
     command=("وقت", plugin_category),
     info={
@@ -112,7 +112,7 @@ async def time_func(tdata):
 
 #كـتابة  @RR7PP
 #تعديل وترتيب  @KiNGBrlin
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="الوقت(?:\s|$)([\s\S]*)",
     command=("الوقت", plugin_category),
     info={

@@ -5,7 +5,7 @@ from telethon.events import CallbackQuery
 
 from EIT.razan.resources.assistant import *
 from EIT.razan.resources.mybot import *
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from ..core import check_owner
 from ..Config import Config
 
@@ -22,7 +22,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await bot.get_me()
         if query.startswith("اوامري") and event.query.user_id == bot.uid:
             buttons = [
-                [Button.inline("✪ اوامر الادمن ✪", data="jmthon0")],
+                [Button.inline("✪ اوامر الادمن ✪", data="EITHON10")],
                 [
                     Button.inline("✪ اوامر البوت ✪", data="rozbot"),
                     Button.inline("✪ الحساب ✪", data="Jmrz"),
@@ -87,7 +87,7 @@ async def repo(event):
     await event.delete()
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"jmthon0")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"EITHON10")))
 @check_owner
 async def _(event):
     buttons = [
@@ -96,17 +96,17 @@ async def _(event):
       Button.inline("القائمة الرئيسية", data="ROE"),]]
     await event.edit(ROZADM, buttons=buttons)
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"jrzst")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"jrzst")))
 @check_owner
 async def _(event):
     butze = [
     [
      Button.inline("التالي", data="tslrzj"),
-     Button.inline("رجوع", data="jmthon0")]]
+     Button.inline("رجوع", data="EITHON10")]]
     await event.edit(GRTSTI, buttons=butze)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"tslrzj")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"tslrzj")))
 @check_owner
 async def _(event):
     buttons = [
@@ -116,7 +116,7 @@ async def _(event):
     await event.edit(JMAN, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"krrznd")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"krrznd")))
 @check_owner
 async def _(event):
     buttons = [
@@ -126,7 +126,7 @@ async def _(event):
     await event.edit(TKPRZ, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"rozbot")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"rozbot")))
 @check_owner
 async def _(event):
     buttons = [
@@ -136,7 +136,7 @@ async def _(event):
     await event.edit(ROZBOT, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"Jmrz")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"Jmrz")))
 @check_owner
 async def _(event):
     buttons = [
@@ -146,7 +146,7 @@ async def _(event):
     await event.edit(JROZT, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"r7brz")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"r7brz")))
 @check_owner
 async def _(event):
     buttons = [
@@ -156,7 +156,7 @@ async def _(event):
     await event.edit(JMTRD, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"sejrz")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"sejrz")))
 @check_owner
 async def _(event):
     buttons = [
@@ -166,7 +166,7 @@ async def _(event):
     await event.edit(ROZSEG, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"gro")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"gro")))
 @check_owner
 async def _(event):
     buttons = [
@@ -176,7 +176,7 @@ async def _(event):
     await event.edit(JMGR1,buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"grrz")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"grrz")))
 @check_owner
 async def _(event):
     buttons = [
@@ -186,7 +186,7 @@ async def _(event):
     await event.edit(ROZPRV, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"iiers")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"iiers")))
 @check_owner
 async def _(event):
     buttons = [
@@ -196,7 +196,7 @@ async def _(event):
     await event.edit(HERP, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"rfhrz")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"rfhrz")))
 @check_owner
 async def _(event):
     buttons = [
@@ -206,8 +206,8 @@ async def _(event):
     await event.edit(T7SHIZ, buttons=buttons)
 
 
-@jmthon.tgbot.on(CallbackQuery(data=re.compile(rb"uscuxrz")))
+@EITHON1.tgbot.on(CallbackQuery(data=re.compile(rb"uscuxrz")))
 @check_owner
 async def _(event):
-    buttons = [[Button.inline("رجوع", data="jmthon0"),]]
+    buttons = [[Button.inline("رجوع", data="EITHON10"),]]
     await event.edit(CLORN, buttons=buttons)

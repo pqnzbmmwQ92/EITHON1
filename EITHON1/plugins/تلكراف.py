@@ -15,7 +15,7 @@ from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 from telethon.utils import get_display_name
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 from ..core.logger import logging
@@ -36,7 +36,7 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="(ت(ل)?ك(راف)?) ?(m|t|ميديا|نص)(?:\s|$)([\s\S]*)",
     command=("تلكراف", plugin_category),
     info={

@@ -1,8 +1,8 @@
-from EITHON1 import CMD_HELP, jmthon
+from EITHON1 import CMD_HELP, EITHON1
 from EITHON1.utils import admin_cmd
 #EITHON1 
 
-@jmthon.on(admin_cmd(pattern="خاص ?(.*)"))
+@EITHON1.on(admin_cmd(pattern="خاص ?(.*)"))
 async def pmto(event):
     r = event.pattern_match.group(1)
     p = r.split(" ")

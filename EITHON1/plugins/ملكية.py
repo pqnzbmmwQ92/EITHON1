@@ -3,14 +3,14 @@
 import telethon.password as pwd_mod
 from telethon.tl import functions
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 
 plugin_category = "utils"
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="ملكية (.*)",
     command=("ملكية", plugin_category),
     info={

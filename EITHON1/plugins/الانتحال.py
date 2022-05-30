@@ -12,7 +12,7 @@ from . import (
     BOTLOG,
     BOTLOG_CHATID,
     DEFAULT_BIO,
-    jmthon,
+    EITHON1,
     edit_delete,
     get_user_from_event,
 )
@@ -26,7 +26,7 @@ DEFAULTUSERBIO = (
 )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="انتحال(?:\s|$)([\s\S]*)",
     command=("انتحال", plugin_category),
     info={
@@ -67,7 +67,7 @@ async def _(event):
         )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="اعادة$",
     command=("اعادة", plugin_category),
     info={

@@ -1,13 +1,13 @@
 from asyncio import sleep
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from EITHON1.core.logger import logging
 
 plugin_category = "tools"
 LOGS = logging.getLogger(__name__)
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="مؤقت (\d*) ([\s\S]*)",
     command=("مؤقت", plugin_category),
     info={

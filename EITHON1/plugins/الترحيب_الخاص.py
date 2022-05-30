@@ -6,7 +6,7 @@ from asyncio import sleep
 
 from telethon import events
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 from ..Config import Config
 
 
@@ -24,7 +24,7 @@ plugin_category = "utils"
 welpriv = Config.PRV_ET or "رحب"
 delwelpriv = Config.DELPRV_ET or "حذف رحب"
 
-@jmthon.on(events.ChatAction)
+@EITHON1.on(events.ChatAction)
 async def _(event):
     cws = getcurrent_welcome_settings(event.chat_id)
     if (
@@ -87,7 +87,7 @@ async def _(event):
         )
 
 
-@jmthon.on(admin_cmd(pattern=f"{welpriv}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{welpriv}(?:\s|$)([\s\S]*)"))
 async def save_welcome(event):
     "To set private welcome message."
     msg = await event.get_reply_message()
@@ -123,7 +123,7 @@ async def save_welcome(event):
     await edit_or_reply("**⌯︙حـدث خطـأ أثنـاء ضبـط رسالـة الترحيـب في هـذه الـدردشـة ️**")
 
 
-@jmthon.on(admin_cmd(pattern=f"{delwelpriv}(?:\s|$)([\s\S]*)"))
+@EITHON1.on(admin_cmd(pattern=f"{delwelpriv}(?:\s|$)([\s\S]*)"))
 async def del_welcome(event):
     "To turn off private welcome message"
     if rmwelcome_setting(event.chat_id) is True:
@@ -132,7 +132,7 @@ async def del_welcome(event):
         await edit_or_reply(event, "**⌯︙لـيس لـدي اي رسـالة تـرحيب خـاص هـنا**")
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="لستة الترحيب الخاص$",
     command=("لستة الترحيب خاص", plugin_category),
     info={

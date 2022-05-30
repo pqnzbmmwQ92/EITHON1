@@ -8,7 +8,7 @@ import heroku3
 import requests
 import urllib3
 
-from EITHON1 import jmthon
+from EITHON1 import EITHON1
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -24,7 +24,7 @@ HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="(اضف|المعلومات|حذف) فار ([\s\S]*)",
     command=("فار", plugin_category),
     info={
@@ -113,7 +113,7 @@ async def variable(var):  # sourcery no-metrics
         del heroku_var[variable]
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="استخدامي$",
     command=("استخدامي", plugin_category),
     info={
@@ -183,7 +183,7 @@ async def dyno_usage(dyno):
     )
 
 
-@jmthon.ar_cmd(
+@EITHON1.ar_cmd(
     pattern="(herokulogs|الدخول)$",
     command=("الدخول", plugin_category),
     info={
